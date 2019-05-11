@@ -1,11 +1,11 @@
-import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
 
-import { SignUpLink } from "./SignUp";
-import { PasswordForgetLink } from "./PasswordForget";
-import { withFirebase } from "./Firebase";
-import CallToActActionButton from "./CallToActActionButton";
-import * as ROUTES from "../constants/routes";
+import { SignUpLink } from './SignUp';
+import { PasswordForgetLink } from './PasswordForget';
+import { withFirebase } from './Firebase';
+import Button from 'react-bootstrap/Button';
+import * as ROUTES from '../constants/routes';
 
 const LoginPage = () => {
   return (
@@ -19,8 +19,8 @@ const LoginPage = () => {
 };
 
 const INITIAL_STATE = {
-  email: "",
-  password: "",
+  email: '',
+  password: '',
   error: null
 };
 
@@ -48,7 +48,7 @@ class LoginFormBase extends Component {
   };
 
   render() {
-    const isFormValid = this.state.password !== "" && this.state.email !== "";
+    const isFormValid = this.state.password !== '' && this.state.email !== '';
 
     return (
       <form onSubmit={this.onSubmit}>
@@ -73,12 +73,13 @@ class LoginFormBase extends Component {
           />
         </div>
         <div className="form-group">
-          <CallToActActionButton
+          <Button
+            variant="cta"
             disabled={!isFormValid}
             className="btn-lg btn-block"
           >
             Sign In!
-          </CallToActActionButton>
+          </Button>
         </div>
 
         {this.state.error && <p>{this.state.error.message}</p>}

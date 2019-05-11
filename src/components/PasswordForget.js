@@ -1,10 +1,9 @@
-import React from "react";
+import React from 'react';
 
-import { withFirebase } from "./Firebase";
-import * as ROUTES from "../constants/routes";
-import SecondaryLinkButton from "./SecondaryLinkButton";
-import CallToActActionButton from "./CallToActActionButton";
-import FormInput from "./FormInput";
+import { withFirebase } from './Firebase';
+import * as ROUTES from '../constants/routes';
+import Button from 'react-bootstrap/Button';
+import FormInput from './FormInput';
 
 const PasswordForgetPage = () => {
   return (
@@ -16,7 +15,7 @@ const PasswordForgetPage = () => {
 };
 
 const INITIAL_STATE = {
-  email: "",
+  email: '',
   error: null
 };
 
@@ -41,7 +40,7 @@ class PasswordForgetFormBase extends React.Component {
   };
 
   render() {
-    const isInvalid = this.state.email === "";
+    const isInvalid = this.state.email === '';
 
     return (
       <form onSubmit={this.onSubmit}>
@@ -54,13 +53,14 @@ class PasswordForgetFormBase extends React.Component {
           placeholder="Email Address"
         />
         <div className="form-group">
-          <CallToActActionButton
+          <Button
+            variant="cta"
             className="btn-lg btn-block"
             type="submit"
             disabled={isInvalid}
           >
             Reset My Password!
-          </CallToActActionButton>
+          </Button>
         </div>
 
         {this.state.error && <p>{this.state.error.message}</p>}
@@ -70,9 +70,13 @@ class PasswordForgetFormBase extends React.Component {
 }
 
 const PasswordForgetLink = props => (
-  <SecondaryLinkButton href={ROUTES.PASSWORD_FORGET} className="btn-block">
+  <Button
+    variant="secondary"
+    href={ROUTES.PASSWORD_FORGET}
+    className="btn-block"
+  >
     {props.text}
-  </SecondaryLinkButton>
+  </Button>
 );
 
 export default PasswordForgetPage;

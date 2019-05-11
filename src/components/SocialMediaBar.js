@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import IconLinkButton from './IconLinkButton';
+import Button from 'react-bootstrap/Button';
 
 const SocialMediaBar = props => {
   const sites = Object.entries(props.data);
@@ -9,12 +9,14 @@ const SocialMediaBar = props => {
     <span>
       {sites.map(site => {
         return (
-          <IconLinkButton
+          <Button
+            variant="cta"
             key={site[0]}
             className={`${props.className}`}
             href={site[1]}
-            icon={site[0]}
-          />
+          >
+            <i className={`fab fa-${site[0]}`} />
+          </Button>
         );
       })}
     </span>

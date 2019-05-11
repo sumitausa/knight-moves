@@ -1,5 +1,5 @@
-import React from "react";
-import CallToActLinkButton from "./CallToActLinkButton";
+import React from 'react';
+import Button from 'react-bootstrap/Button';
 
 const Landing = () => {
   return (
@@ -16,12 +16,12 @@ const Landing = () => {
                 Thousands of Games | Two Cafes | One Community
               </p>
             </div>
-            <CallToActLinkButton className="btn-lg" href="/brookline">
+            <Button variant="cta" className="btn-lg" href="/brookline">
               Brookline
-            </CallToActLinkButton>
-            <CallToActLinkButton className="btn-lg" href="/somerville">
+            </Button>
+            <Button variant="cta" className="btn-lg" href="/somerville">
               Somerville
-            </CallToActLinkButton>
+            </Button>
           </div>
         </div>
       </div>

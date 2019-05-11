@@ -1,12 +1,11 @@
-import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
-import propTypes from "prop-types";
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import propTypes from 'prop-types';
 
-import { withFirebase } from "./Firebase";
-import * as ROUTES from "../constants/routes";
+import { withFirebase } from './Firebase';
+import * as ROUTES from '../constants/routes';
 
-import CallToActActionButton from "./CallToActActionButton";
-import SecondaryLinkButton from "./SecondaryLinkButton";
+import Button from 'react-bootstrap/Button';
 
 const SignUpPage = () => {
   return (
@@ -20,10 +19,10 @@ const SignUpPage = () => {
 };
 
 const INITIAL_STATE = {
-  username: "",
-  email: "",
-  passwordOne: "",
-  passwordTwo: "",
+  username: '',
+  email: '',
+  passwordOne: '',
+  passwordTwo: '',
   error: null
 };
 
@@ -59,9 +58,9 @@ class SignUpFormBase extends Component {
   render() {
     const isFormValid =
       this.state.passwordOne === this.state.passwordTwo &&
-      this.state.passwordOne !== "" &&
-      this.state.email !== "" &&
-      this.state.username !== "";
+      this.state.passwordOne !== '' &&
+      this.state.email !== '' &&
+      this.state.username !== '';
 
     return (
       <form onSubmit={this.onSubmit}>
@@ -106,13 +105,14 @@ class SignUpFormBase extends Component {
           />
         </div>
         <div className="form-group">
-          <CallToActActionButton
+          <Button
+            variant="cta"
             type="submit"
             disabled={!isFormValid}
             className="btn-lg btn-block"
           >
             Register!
-          </CallToActActionButton>
+          </Button>
         </div>
 
         {this.state.error && <p>{this.state.error.message}</p>}
@@ -123,9 +123,9 @@ class SignUpFormBase extends Component {
 
 const SignUpLink = props => {
   return (
-    <SecondaryLinkButton href={ROUTES.SIGN_UP} className="btn-block">
+    <Button variant="secondary" href={ROUTES.SIGN_UP} className="btn-block">
       {props.text}
-    </SecondaryLinkButton>
+    </Button>
   );
 };
 
@@ -134,7 +134,7 @@ SignUpLink.propTypes = {
 };
 
 SignUpLink.defaultProps = {
-  text: "Sign Up!"
+  text: 'Sign Up!'
 };
 
 const SignUpForm = withRouter(withFirebase(SignUpFormBase));

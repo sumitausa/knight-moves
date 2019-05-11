@@ -68,8 +68,6 @@ body,
 
 footer {
     position: relative;
-    bottom: 0;
-    width: 100%;
     min-height: 60px;
     line-height: 60px;
     display: inline-block;
@@ -78,6 +76,54 @@ footer {
 footer a {
     margin-left: 20px;
     color: black;
+}
+
+.btn {
+    white-space: normal;
+    margin-bottom: 4px;
+    border-radius: 25px;
+}
+
+.btn.btn-circle {
+    width: 50px;
+    height: 50px;
+    padding: 6px 0px;
+    border-radius: 25px;
+    text-align: center;
+}
+
+.btn-cta {
+    background-color: var(--color-primary-1);
+    color: var(--color-primary-4);
+    border-color: var(--color-primary-1);
+}
+
+.btn-cta:hover,
+.btn-cta:not(:disabled):not(.disabled).active,
+.btn-cta:focus,
+.btn-cta:active,
+.btn-cta.active,
+.open .dropdown-toggle.btn-cta {
+    background-color: var(--color-primary-2);
+    color: var(--color-primary-4);
+    border-color: var(--color-primary-3);
+}
+
+.btn-secondary {
+    background-color: var(--color-primary-0);
+    color: var(--color-primary-1);
+    border-color: var(--color-primary-3);
+}
+
+.btn-secondary:hover,
+.btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:focus,
+.btn-secondary:active,
+.btn-secondary.active,
+.open .dropdown-toggle.btn-secondary {
+    background-color: var(--color-primary-3);
+    color: var(--color-primary-1);
+    border-color: var(--color-primary-4);
 }
 
 #navbarLogo {
@@ -97,6 +143,23 @@ footer a {
 .jumbotron {
     margin-bottom: 0;
     text-align: center;
+}
+
+.icon-404 {
+    margin-right: 10px;
+    animation-name: spin;
+    animation-duration: 2000ms;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
 }
 
 /************************************************************************/

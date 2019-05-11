@@ -1,12 +1,12 @@
-import React from "react";
-import { withFirebase } from "./Firebase";
-import CallToActActionButton from "./CallToActActionButton";
+import React from 'react';
+import { withFirebase } from './Firebase';
+import Button from 'react-bootstrap/Button';
 
 const SignOutButton = ({ firebase }) => {
   return (
-    <CallToActActionButton type="button" onClick={firebase.doSignOut}>
+    <Button type="button" onClick={firebase.doSignOut}>
       Sign Out
-    </CallToActActionButton>
+    </Button>
   );
 };
 

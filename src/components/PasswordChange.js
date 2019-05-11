@@ -1,11 +1,11 @@
-import React from "react";
-import { withFirebase } from "./Firebase";
-import CallToActActionButton from "./CallToActActionButton";
-import FormInput from "./FormInput";
+import React from 'react';
+import { withFirebase } from './Firebase';
+import Button from 'react-bootstrap/Button';
+import FormInput from './FormInput';
 
 const INITIAL_STATE = {
-  passwordOne: "",
-  passwordTwo: "",
+  passwordOne: '',
+  passwordTwo: '',
   error: null
 };
 
@@ -32,7 +32,7 @@ class PasswordChangeForm extends React.Component {
   render() {
     const isInvalid =
       this.state.passwordOne !== this.state.passwordTwo ||
-      this.state.passwordOne === "";
+      this.state.passwordOne === '';
 
     return (
       <form onSubmit={this.onSubmit}>
@@ -50,13 +50,14 @@ class PasswordChangeForm extends React.Component {
           type="password"
           placeholder="Confirm New Password"
         />
-        <CallToActActionButton
+        <Button
+          variant="cta"
           className="btn-lg btn-block"
           disabled={isInvalid}
           type="submit"
         >
           Reset My Password
-        </CallToActActionButton>
+        </Button>
       </form>
     );
   }
