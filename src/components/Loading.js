@@ -5,6 +5,7 @@ const Loading = () => {
     <div
       id="leadJumbo"
       className="jumbotron jumbotron-fluid paral paralsec-landing"
+      style={{ minHeight: '2000px' }}
     />
   );
 };

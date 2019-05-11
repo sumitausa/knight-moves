@@ -16,10 +16,20 @@ const Landing = () => {
                 Thousands of Games | Two Cafes | One Community
               </p>
             </div>
-            <Button variant="cta" className="btn-lg" href="/brookline">
+            <Button
+              variant="cta"
+              className="btn-lg"
+              href="/brookline"
+              style={{ marginRight: '10px' }}
+            >
               Brookline
             </Button>
-            <Button variant="cta" className="btn-lg" href="/somerville">
+            <Button
+              variant="cta"
+              className="btn-lg"
+              href="/somerville"
+              style={{ marginLeft: '10px' }}
+            >
               Somerville
             </Button>
           </div>

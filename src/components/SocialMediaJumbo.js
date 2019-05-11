@@ -6,7 +6,6 @@ import SocialMediaBar from './SocialMediaBar';
 const SocialMediaJumbo = props => {
   return (
     <React.Fragment>
-      <div className="jumbotron paral paralsec3" />
       <div className="jumbotron jumbotron-fluid paral paralsec-text">
         <div className="container">
           <h1 className="display-4">Connect with us on Social Media!</h1>

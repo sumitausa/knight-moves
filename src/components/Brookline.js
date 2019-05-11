@@ -5,7 +5,11 @@ import SocialMediaJumbo from './SocialMediaJumbo';
 import Menu from './Menu';
 import Loading from './Loading';
 import AboutJumbo from './AboutJumbo';
+import ParallaxJumbo from './ParallaxJumbo';
 import { withFirebase } from './Firebase';
+
+import SocialMediaImage from '../shelves2.jpg';
+import MenuImage from '../baked_goods_in_platter.jpg';
 
 class Brookline extends React.Component {
   state = {
@@ -38,9 +42,15 @@ class Brookline extends React.Component {
               hours={this.state.cafeData.hours}
             />
 
+            <ParallaxJumbo img={SocialMediaImage} />
+
             <SocialMediaJumbo socialData={this.state.cafeData.socialLinks} />
 
+            <ParallaxJumbo img={MenuImage} />
+
             <Menu menu={this.state.cafeData.menu} />
+
+            {/* <ParallaxJumbo img={EventsImage} /> */}
 
             {/* <EventsJumbo /> */}
           </div>
