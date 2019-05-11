@@ -1,3 +1,19 @@
+# KnightMovesCafe.com
+
+This is a website for the Knight Moves Cafe, based in Brookline and Somerville. It is built using React JS, and uses Google's Firebase service as a backend.
+
+## To deploy after making changes to the website
+
+### Commit Changes
+
+Then, from the root of the project, enter the following two commands on the command line.
+
+### `npm run build`
+
+### `firebase deploy`
+
+## API
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 ## Available Scripts

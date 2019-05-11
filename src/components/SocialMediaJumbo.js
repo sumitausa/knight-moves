@@ -72,7 +72,7 @@ class SocialMediaJumbo extends React.Component {
       this.setState({
         currentPage: (this.state.currentPage + 1) % maxPages
       });
-    }, 3000);
+    }, 5000);
   };
 
   handleWindowResize = () => {
