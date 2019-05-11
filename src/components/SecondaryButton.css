@@ -1,0 +1,16 @@
+.btn-secondary {
+	background-color: var(--color-primary-0);
+	color: var(--color-primary-1);
+	border-color: var(--color-primary-3);
+}
+
+.btn-secondary:hover,
+.btn-secondary:not(:disabled):not(.disabled).active,
+.btn-secondary:focus,
+.btn-secondary:active,
+.btn-secondary.active,
+.open .dropdown-toggle.btn-secondary {
+	background-color: var(--color-primary-3);
+	color: var(--color-primary-1);
+	border-color: var(--color-primary-4);
+}
