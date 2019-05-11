@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import IconLinkButton from './IconLinkButton';
 
 const SocialMediaBar = props => {
@@ -18,6 +19,15 @@ const SocialMediaBar = props => {
       })}
     </span>
   );
+};
+
+SocialMediaBar.propTypes = {
+  className: PropTypes.string,
+  data: PropTypes.objectOf(PropTypes.string).isRequired
+};
+
+SocialMediaBar.defaultProps = {
+  className: ''
 };
 
 export default SocialMediaBar;

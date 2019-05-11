@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 import LinkImage from './LinkImage';
 import SocialMediaBar from './SocialMediaBar';
@@ -167,5 +168,9 @@ class SocialMediaJumbo extends React.Component {
     );
   }
 }
+
+SocialMediaJumbo.propTypes = {
+  socialData: PropTypes.object.isRequired
+};
 
 export default SocialMediaJumbo;

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import MenuGroup from './MenuGroup';
 
 const Menu = props => {
@@ -25,6 +26,10 @@ const Menu = props => {
       </div>
     </React.Fragment>
   );
+};
+
+Menu.propTypes = {
+  menu: PropTypes.objectOf(PropTypes.object).isRequired
 };
 
 export default Menu;

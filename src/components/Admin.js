@@ -1,5 +1,5 @@
-import React from "react";
-import { withFirebase } from "./Firebase";
+import React from 'react';
+import { withFirebase } from './Firebase';
 
 class Admin extends React.Component {
   state = {
@@ -8,7 +8,7 @@ class Admin extends React.Component {
   };
 
   componentDidMount() {
-    this.props.firebase.users().on("value", snapshot => {
+    this.props.firebase.users().on('value', snapshot => {
       const usersObject = snapshot.val();
 
       const usersList = Object.keys(usersObject).map(key => ({
@@ -29,7 +29,7 @@ class Admin extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className="container">
         <h1>ADMIN PAGE</h1>
 
         {this.state.loading && <div>Loading...</div>}
@@ -44,15 +44,15 @@ const UserList = ({ users }) => (
   <ul>
     {users.map(user => (
       <li key={user.uid}>
-        <span>
-          <strong>ID:</strong> {user.uid}
-        </span>
-        <span>
-          <strong>Email:</strong> {user.email}
-        </span>
-        <span>
-          <strong>Username:</strong> {user.username}
-        </span>
+        <strong>Username:</strong> {user.username}
+        <ul>
+          <li>
+            <strong>Database ID:</strong> {user.uid}
+          </li>
+          <li>
+            <strong>Email:</strong> {user.email}
+          </li>
+        </ul>
       </li>
     ))}
   </ul>

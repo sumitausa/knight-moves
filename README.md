@@ -4,15 +4,12 @@ This is a website for the Knight Moves Cafe, based in Brookline and Somerville. 
 
 ## To deploy after making changes to the website
 
-### Commit Changes
+Commit Changes. Then, from the root of the project, enter the following two commands on the command line.
 
-Then, from the root of the project, enter the following two commands on the command line.
+`npm run build`
+`firebase deploy`
 
-### `npm run build`
-
-### `firebase deploy`
-
-## API
+## Default Create React App Info
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
