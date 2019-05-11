@@ -139,12 +139,19 @@ class SocialMediaJumbo extends React.Component {
                         key={image.id}
                         className="col-12 col-sm-12 col-md-6 col-lg-4"
                       >
-                        <LinkImage
-                          href={image.permalink}
-                          className={'img-thumbnail image-wrapper'}
-                          src={image.media_url}
-                          alt={image.caption}
-                        />
+                        <div>
+                          <LinkImage
+                            href={image.permalink}
+                            className={'img-thumbnail image-wrapper'}
+                            src={image.media_url}
+                            alt={image.caption}
+                          />
+                          <p>
+                            {image.caption.slice(0, 100) === image.caption
+                              ? image.caption
+                              : image.caption.slice(0, 100) + '...'}
+                          </p>
+                        </div>
                       </div>
                     );
                   })}

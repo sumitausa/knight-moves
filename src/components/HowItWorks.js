@@ -1,4 +1,4 @@
-import React from "react";
+import React from 'react';
 
 const HowItWorks = props => {
   return (
@@ -20,20 +20,20 @@ const HowItWorks = props => {
       <h3>Not Playing Games?</h3>
       <p>
         Purchase any item from our menu and you are welcome to use our WiFi and
-        space as long as you need.
+        space as long as you like.
       </p>
       <h3>Bringing in Outside Food or Drinks?</h3>
       <p>
         Pay the Outside food and drink fee. The outside food and drink fee is
         per person, not per item, so feel free to bring in as much of whatever
         you like. Don’t like whats on our menu? Why not order a pizza? We also
-        have a collection of glassware, so no need to bring cups.
+        have a collection of glassware, so no need to bring cups!
       </p>
       <h3>Picking out Games?</h3>
       <p>
         We have hundreds of games in our collection! If you are having a hard
         time finding a specific game, or just want a suggestion, ask our expert
-        staff for help! If we can’t find exactly what your looking for, we can
+        staff for help! If we can’t find exactly what you're looking for, we can
         help point you in the right direction.
       </p>
       <h3>Play, Have Fun, Repeat</h3>
