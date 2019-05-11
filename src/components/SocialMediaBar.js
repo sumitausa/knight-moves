@@ -4,8 +4,6 @@ import IconLinkButton from './IconLinkButton';
 const SocialMediaBar = props => {
   const sites = Object.entries(props.data);
 
-  console.log('sites', sites);
-
   return (
     <span>
       {sites.map(site => {

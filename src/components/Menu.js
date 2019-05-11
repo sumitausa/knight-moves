@@ -4,7 +4,6 @@ import MenuGroup from './MenuGroup';
 const Menu = props => {
   return (
     <React.Fragment>
-      {console.log(props)}
       <div className="jumbotron jumbotron-fluid paral paralsec2" />
       <div id="menu" className="jumbotron jumbotron-fluid paral paralsec-text">
         <div>

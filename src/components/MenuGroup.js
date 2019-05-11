@@ -7,7 +7,6 @@ const MenuGroup = props => {
       <h2>{props.groupName}</h2>
       <div className="row m-5">
         {Object.keys(props.products).map(item => {
-          console.log('mgroup item:', item);
           return (
             <MenuItem
               key={item}
