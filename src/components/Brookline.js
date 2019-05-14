@@ -38,6 +38,8 @@ class Brookline extends React.Component {
             <LeadJumbo cafeLocation="Brookline" />
 
             <AboutJumbo
+              story={this.state.cafeData.story}
+              howItWorks={this.state.cafeData.howItWorks}
               contact={this.state.cafeData.contact}
               hours={this.state.cafeData.hours}
             />

@@ -2,8 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 const ParallaxJumbo = props => {
-  console.log(props);
-
   return (
     <div
       className="paral jumbotron jumbotron-fluid"
@@ -13,9 +11,7 @@ const ParallaxJumbo = props => {
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center'
       }}
-    >
-      {/* <img className="paral" src={props.img} /> */}
-    </div>
+    />
   );
 };
 

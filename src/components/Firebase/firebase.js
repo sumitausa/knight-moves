@@ -1,6 +1,6 @@
-import app from "firebase/app";
-import "firebase/auth";
-import "firebase/database";
+import app from 'firebase/app';
+import 'firebase/auth';
+import 'firebase/database';
 
 const config = {
   apiKey: process.env.REACT_APP_API_KEY,
@@ -45,13 +45,13 @@ class Firebase {
 
   user = uid => this.db.ref(`users/${uid}`);
 
-  users = () => this.db.ref("users");
+  users = () => this.db.ref('users');
 
   // *** Cafe API ***
 
-  brookline = () => this.db.ref("brookline");
+  brookline = () => this.db.ref('brookline');
 
-  somerville = () => this.db.ref("somerville");
+  somerville = () => this.db.ref('somerville');
 }
 
 export default Firebase;

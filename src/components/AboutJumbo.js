@@ -4,6 +4,7 @@ import Story from './Story';
 import Hours from './Hours';
 import ContactInfo from './ContactInfo';
 import HowItWorks from './HowItWorks';
+import { withFirebase } from './Firebase';
 
 const AboutJumbo = props => {
   return (
@@ -16,7 +17,7 @@ const AboutJumbo = props => {
           <div className="col-12">
             <div className="row">
               <div className="col-md-8">
-                <HowItWorks />
+                <HowItWorks data={props.howItWorks} />
               </div>
               <div className="col-md-4">
                 <ContactInfo contact={props.contact} />
@@ -24,7 +25,7 @@ const AboutJumbo = props => {
               </div>
             </div>
             <div id="story" />
-            <Story />
+            <Story story={props.story} />
           </div>
         </div>
       </div>
@@ -53,4 +54,4 @@ AboutJumbo.propTypes = {
   })
 };
 
-export default AboutJumbo;
+export default withFirebase(AboutJumbo);
