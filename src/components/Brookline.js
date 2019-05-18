@@ -3,9 +3,9 @@ import LeadJumbo from './LeadJumbo';
 //import EventsJumbo from './EventsJumbo';
 import SocialMediaJumbo from './SocialMediaJumbo';
 import Menu from './Menu';
-import Loading from './Loading';
 import AboutJumbo from './AboutJumbo';
 import ParallaxJumbo from './ParallaxJumbo';
+import Spinner from 'react-bootstrap/Spinner';
 import { withFirebase } from './Firebase';
 
 import SocialMediaImage from '../shelves2.jpg';
@@ -32,7 +32,9 @@ class Brookline extends React.Component {
     return (
       <div>
         {this.state.isLoading ? (
-          <Loading />
+          <Spinner animation="border" role="status">
+            <span className="sr-only">Loading...</span>
+          </Spinner>
         ) : (
           <div id="top">
             <LeadJumbo cafeLocation="Brookline" />

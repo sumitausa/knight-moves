@@ -1,6 +1,6 @@
 import React from 'react';
-import LinkImage from './LinkImage';
 import Button from 'react-bootstrap/Button';
+import Card from 'react-bootstrap/Card';
 import './ImageWrapper.css';
 import axios from 'axios';
 
@@ -144,19 +144,32 @@ class InstagramFeedContainer extends React.Component {
                   key={image.id}
                   className="col-12 col-sm-12 col-md-6 col-lg-4"
                 >
-                  <div>
-                    <LinkImage
-                      href={image.permalink}
-                      className={'img-thumbnail image-wrapper'}
-                      src={image.media_url}
-                      alt={image.caption}
-                    />
-                    <p>
-                      {image.caption.slice(0, 100) === image.caption
-                        ? image.caption
-                        : image.caption.slice(0, 100) + '...'}
-                    </p>
-                  </div>
+                  <Card
+                    style={{
+                      height: '450px',
+                      backgroundColor: 'var(--color-primary-4)'
+                    }}
+                  >
+                    <a href={image.permalink}>
+                      <Card.Img
+                        variant="top"
+                        src={image.media_url}
+                        alt={image.caption}
+                        style={{
+                          height: '300px',
+                          padding: '4px',
+                          objectFit: 'cover'
+                        }}
+                      />
+                    </a>
+                    <Card.Body>
+                      <Card.Text>
+                        {image.caption.slice(0, 100) === image.caption
+                          ? image.caption
+                          : image.caption.slice(0, 100) + '...'}
+                      </Card.Text>
+                    </Card.Body>
+                  </Card>
                 </div>
               );
             })}

@@ -1,61 +1,62 @@
 import React from 'react';
+import Container from 'react-bootstrap/Container';
+import DropdownButton from 'react-bootstrap/DropdownButton';
+import Dropdown from 'react-bootstrap/Dropdown';
+import UsersEditContainer from './UsersEditContainer';
+import ContactTyrel from './ContactTyrel';
 import { withFirebase } from './Firebase';
+
+const BROOKLINE = 'Brookline';
+const SOMERVILLE = 'Somerville';
+const USERS = 'Users';
+const SOMETHING_ELSE = 'Something Else';
 
 class Admin extends React.Component {
   state = {
-    loading: true,
-    users: []
+    selected: null,
+    loadedData: null
   };
 
-  componentDidMount() {
-    this.props.firebase.users().on('value', snapshot => {
-      const usersObject = snapshot.val();
-
-      const usersList = Object.keys(usersObject).map(key => ({
-        ...usersObject[key],
-        uid: key
-      }));
-
-      this.setState({
-        users: usersList,
-        loading: false
-      });
+  handleSelect = eventKey => {
+    this.setState({
+      selected: eventKey
     });
-  }
-
-  componentWillUnmount() {
-    this.props.firebase.users().off();
-  }
+  };
 
   render() {
     return (
-      <div className="container">
+      <Container>
         <h1>ADMIN PAGE</h1>
+        <h3>What would you like to edit?</h3>
 
-        {this.state.loading && <div>Loading...</div>}
+        <DropdownButton
+          variant="cta"
+          title={this.state.selected ? this.state.selected : 'Select One'}
+          id="basic-nav-dropdown"
+          onSelect={this.handleSelect}
+        >
+          <Dropdown.Item eventKey={BROOKLINE}>{BROOKLINE}</Dropdown.Item>
+          <Dropdown.Item eventKey={SOMERVILLE}>{SOMERVILLE}</Dropdown.Item>
+          <Dropdown.Item eventKey={USERS}>{USERS}</Dropdown.Item>
+          <Dropdown.Item eventKey={SOMETHING_ELSE}>
+            {SOMETHING_ELSE}
+          </Dropdown.Item>
+        </DropdownButton>
 
-        <UserList users={this.state.users} />
-      </div>
+        {/*         {this.state.selected === BROOKLINE && ( */}
+        {/*           <BrooklineEditContainer>Hello</BrooklineEditContainer> */}
+        {/*         )} */}
+        {/*  */}
+        {/*         {this.state.selected === SOMERVILLE && ( */}
+        {/*           <SomervilleEditContainer>Hello</SomervilleEditContainer> */}
+        {/*         )} */}
+        {/*  */}
+        {this.state.selected === USERS && <UsersEditContainer />}
+
+        {this.state.selected === SOMETHING_ELSE && <ContactTyrel />}
+      </Container>
     );
   }
 }
-
-const UserList = ({ users }) => (
-  <ul>
-    {users.map(user => (
-      <li key={user.uid}>
-        <strong>Username:</strong> {user.username}
-        <ul>
-          <li>
-            <strong>Database ID:</strong> {user.uid}
-          </li>
-          <li>
-            <strong>Email:</strong> {user.email}
-          </li>
-        </ul>
-      </li>
-    ))}
-  </ul>
-);
 
 export default withFirebase(Admin);

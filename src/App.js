@@ -9,7 +9,6 @@ import Brookline from './components/Brookline';
 import Somerville from './components/Somerville';
 import Account from './components/Account';
 import SignUp from './components/SignUp';
-import Home from './components/Home';
 import Login from './components/Login';
 import PasswordForget from './components/PasswordForget';
 import Admin from './components/Admin';
@@ -30,7 +29,6 @@ const App = () => {
             <Route path={ROUTES.SIGN_UP} component={SignUp} />
             <Route path={ROUTES.LOG_IN} component={Login} />
             <Route path={ROUTES.ADMIN} component={Admin} />
-            <Route path={ROUTES.HOME} component={Home} />
             <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForget} />
             <Route component={NotFound404} />
           </Switch>
