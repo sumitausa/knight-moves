@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
-import * as ROUTES from './constants/routes';
+import * as CONSTANTS from './components/Constants';
 import { withAuthentication } from './components/Session';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -22,14 +22,17 @@ const App = () => {
         <Navbar />
         <div className="main-content">
           <Switch>
-            <Route path={ROUTES.LANDING} exact component={Landing} />
-            <Route path={ROUTES.BROOKLINE} component={Brookline} />
-            <Route path={ROUTES.SOMERVILLE} component={Somerville} />
-            <Route path={ROUTES.ACCOUNT} component={Account} />
-            <Route path={ROUTES.SIGN_UP} component={SignUp} />
-            <Route path={ROUTES.LOG_IN} component={Login} />
-            <Route path={ROUTES.ADMIN} component={Admin} />
-            <Route path={ROUTES.PASSWORD_FORGET} component={PasswordForget} />
+            <Route path={CONSTANTS.ROUTE_LANDING} exact component={Landing} />
+            <Route path={CONSTANTS.ROUTE_BROOKLINE} component={Brookline} />
+            <Route path={CONSTANTS.ROUTE_SOMERVILLE} component={Somerville} />
+            <Route path={CONSTANTS.ROUTE_ACCOUNT} component={Account} />
+            <Route path={CONSTANTS.ROUTE_SIGN_UP} component={SignUp} />
+            <Route path={CONSTANTS.ROUTE_LOG_IN} component={Login} />
+            <Route path={CONSTANTS.ROUTE_ADMIN} component={Admin} />
+            <Route
+              path={CONSTANTS.ROUTE_PASSWORD_FORGET}
+              component={PasswordForget}
+            />
             <Route component={NotFound404} />
           </Switch>
         </div>

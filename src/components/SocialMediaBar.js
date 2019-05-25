@@ -13,6 +13,7 @@ const SocialMediaBar = props => {
             variant="cta"
             key={site[0]}
             className={`${props.className}`}
+            style={{ margin: '8px' }}
             href={site[1]}
           >
             <i className={`fab fa-${site[0]}`} />

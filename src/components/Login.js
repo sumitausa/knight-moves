@@ -5,7 +5,7 @@ import { SignUpLink } from './SignUp';
 import { PasswordForgetLink } from './PasswordForget';
 import { withFirebase } from './Firebase';
 import Button from 'react-bootstrap/Button';
-import * as ROUTES from '../constants/routes';
+import * as CONSTANTS from './Constants';
 
 const LoginPage = () => {
   return (
@@ -34,7 +34,7 @@ class LoginFormBase extends Component {
       .doSignInWithEmailAndPassword(email, password)
       .then(() => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.ADMIN);
+        this.props.history.push(CONSTANTS.ROUTE_ADMIN);
       })
       .catch(error => {
         this.setState({ error });

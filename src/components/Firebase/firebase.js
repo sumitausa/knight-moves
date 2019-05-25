@@ -51,7 +51,20 @@ class Firebase {
 
   brookline = () => this.db.ref('brookline');
 
+  brooklineContact = () => this.db.ref('brookline/contact');
+  brooklineHours = () => this.db.ref('brookline/hours');
+  brooklineHowItWorks = () => this.db.ref('brookline/howItWorks');
+  brooklineMenu = () => this.db.ref('brookline/menu');
+  brooklineSocialLinks = () => this.db.ref('brookline/socialLinks');
+  brooklineStory = () => this.db.ref('brookline/story');
+
   somerville = () => this.db.ref('somerville');
+  somervilleContact = () => this.db.ref('somerville/contact');
+  somervilleHours = () => this.db.ref('somerville/hours');
+  somervilleHowItWorks = () => this.db.ref('somerville/howItWorks');
+  somervilleMenu = () => this.db.ref('somerville/menu');
+  somervilleSocialLinks = () => this.db.ref('somerville/socialLinks');
+  somervilleStory = () => this.db.ref('somerville/story');
 }
 
 export default Firebase;

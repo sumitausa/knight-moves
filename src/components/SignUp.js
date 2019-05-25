@@ -3,7 +3,7 @@ import { withRouter } from 'react-router-dom';
 import propTypes from 'prop-types';
 
 import { withFirebase } from './Firebase';
-import * as ROUTES from '../constants/routes';
+import * as CONSTANTS from './Constants';
 
 import Button from 'react-bootstrap/Button';
 
@@ -42,7 +42,7 @@ class SignUpFormBase extends Component {
       })
       .then(authUser => {
         this.setState({ ...INITIAL_STATE });
-        this.props.history.push(ROUTES.ADMIN);
+        this.props.history.push(CONSTANTS.ROUTE_ADMIN);
       })
       .catch(error => {
         this.setState({ error });
@@ -123,7 +123,11 @@ class SignUpFormBase extends Component {
 
 const SignUpLink = props => {
   return (
-    <Button variant="secondary" href={ROUTES.SIGN_UP} className="btn-block">
+    <Button
+      variant="secondary"
+      href={CONSTANTS.ROUTE_SIGN_UP}
+      className="btn-block"
+    >
       {props.text}
     </Button>
   );

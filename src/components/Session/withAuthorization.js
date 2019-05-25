@@ -1,15 +1,15 @@
-import React from "react";
-import { withRouter } from "react-router-dom";
-import { withFirebase } from "../Firebase";
-import AuthUserContext from "./context";
-import * as ROUTES from "../../constants/routes";
+import React from 'react';
+import { withRouter } from 'react-router-dom';
+import { withFirebase } from '../Firebase';
+import AuthUserContext from './context';
+import * as CONSTANTS from '../Constants';
 
 const withAuthorization = condition => Component => {
   class withAuthorization extends React.Component {
     componentDidMount() {
       this.listener = this.props.firebase.auth.onAuthStateChanged(authUser => {
         if (!condition(authUser)) {
-          this.props.history.push(ROUTES.LOG_IN);
+          this.props.history.push(CONSTANTS.ROUTE_LOG_IN);
         }
       });
     }

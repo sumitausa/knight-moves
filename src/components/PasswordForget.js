@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { withFirebase } from './Firebase';
-import * as ROUTES from '../constants/routes';
+import * as CONSTANTS from './Constants';
 import Button from 'react-bootstrap/Button';
 import FormInput from './FormInput';
 
@@ -72,7 +72,7 @@ class PasswordForgetFormBase extends React.Component {
 const PasswordForgetLink = props => (
   <Button
     variant="secondary"
-    href={ROUTES.PASSWORD_FORGET}
+    href={CONSTANTS.ROUTE_PASSWORD_FORGET}
     className="btn-block"
   >
     {props.text}

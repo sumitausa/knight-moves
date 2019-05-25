@@ -73,7 +73,7 @@ footer {
     display: inline-block;
 }
 
-footer a {
+#copyright {
     margin-left: 20px;
     color: black;
 }

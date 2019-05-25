@@ -22,7 +22,9 @@ class Footer extends React.Component {
   render() {
     return (
       <footer className="footer sticky-footer bar-bg">
-        <a href="/">&copy; Knight Moves Cafe 2019</a>
+        <a id="copyright" href="/">
+          &copy; Knight Moves Cafe 2019
+        </a>
         {this.state.isLoading ? (
           <span />
         ) : (
