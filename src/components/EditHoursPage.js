@@ -2,6 +2,7 @@ import React from 'react';
 import * as CONSTANTS from './Constants';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
 import { withFirebase } from './Firebase';
 
 class EditHoursPage extends React.Component {
@@ -89,82 +90,84 @@ class EditHoursPage extends React.Component {
         {this.state.isLoading ? (
           <span>Loading...</span>
         ) : (
-          <Form>
-            <Form.Group controlId="monday">
-              <Form.Label>Monday</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Monday Hours"
-                value={this.state.monday}
-                name="monday"
-                onChange={this.handleChange}
-              />
-            </Form.Group>
-            <Form.Group controlId="tuesday">
-              <Form.Label>Tuesday</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Tuesday Hours"
-                value={this.state.tuesday}
-                name="tuesday"
-                onChange={this.handleChange}
-              />
-            </Form.Group>
-            <Form.Group controlId="wednesday">
-              <Form.Label>Wednesday</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Wednesday Hours"
-                value={this.state.wednesday}
-                name="wednesday"
-                onChange={this.handleChange}
-              />
-            </Form.Group>
-            <Form.Group controlId="thursday">
-              <Form.Label>Thursday</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Thursday Hours"
-                value={this.state.thursday}
-                name="thursday"
-                onChange={this.handleChange}
-              />
-            </Form.Group>
-            <Form.Group controlId="friday">
-              <Form.Label>Friday</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Friday Hours"
-                value={this.state.friday}
-                name="friday"
-                onChange={this.handleChange}
-              />
-            </Form.Group>
-            <Form.Group controlId="saturday">
-              <Form.Label>Saturday</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Saturday Hours"
-                value={this.state.saturday}
-                name="saturday"
-                onChange={this.handleChange}
-              />
-            </Form.Group>
-            <Form.Group controlId="sunday">
-              <Form.Label>Sunday</Form.Label>
-              <Form.Control
-                type="text"
-                placeholder="Sunday Hours"
-                value={this.state.sunday}
-                name="sunday"
-                onChange={this.handleChange}
-              />
-            </Form.Group>
-            <Button variant="cta" onClick={this.saveData} type="button">
-              Save Hours
-            </Button>
-            <p>{this.state.message}</p>
-          </Form>
+          <Container className="col-md-6">
+            <Form>
+              <Form.Group controlId="monday">
+                <Form.Label>Monday</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Monday Hours"
+                  value={this.state.monday}
+                  name="monday"
+                  onChange={this.handleChange}
+                />
+              </Form.Group>
+              <Form.Group controlId="tuesday">
+                <Form.Label>Tuesday</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Tuesday Hours"
+                  value={this.state.tuesday}
+                  name="tuesday"
+                  onChange={this.handleChange}
+                />
+              </Form.Group>
+              <Form.Group controlId="wednesday">
+                <Form.Label>Wednesday</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Wednesday Hours"
+                  value={this.state.wednesday}
+                  name="wednesday"
+                  onChange={this.handleChange}
+                />
+              </Form.Group>
+              <Form.Group controlId="thursday">
+                <Form.Label>Thursday</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Thursday Hours"
+                  value={this.state.thursday}
+                  name="thursday"
+                  onChange={this.handleChange}
+                />
+              </Form.Group>
+              <Form.Group controlId="friday">
+                <Form.Label>Friday</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Friday Hours"
+                  value={this.state.friday}
+                  name="friday"
+                  onChange={this.handleChange}
+                />
+              </Form.Group>
+              <Form.Group controlId="saturday">
+                <Form.Label>Saturday</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Saturday Hours"
+                  value={this.state.saturday}
+                  name="saturday"
+                  onChange={this.handleChange}
+                />
+              </Form.Group>
+              <Form.Group controlId="sunday">
+                <Form.Label>Sunday</Form.Label>
+                <Form.Control
+                  type="text"
+                  placeholder="Sunday Hours"
+                  value={this.state.sunday}
+                  name="sunday"
+                  onChange={this.handleChange}
+                />
+              </Form.Group>
+              <Button variant="cta" onClick={this.saveData} type="button">
+                Save Hours
+              </Button>
+              <p>{this.state.message}</p>
+            </Form>
+          </Container>
         )}
       </React.Fragment>
     );

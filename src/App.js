@@ -5,8 +5,7 @@ import { withAuthentication } from './components/Session';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Landing from './components/Landing';
-import Brookline from './components/Brookline';
-import Somerville from './components/Somerville';
+import Cafe from './components/Cafe';
 import Account from './components/Account';
 import SignUp from './components/SignUp';
 import Login from './components/Login';
@@ -23,8 +22,18 @@ const App = () => {
         <div className="main-content">
           <Switch>
             <Route path={CONSTANTS.ROUTE_LANDING} exact component={Landing} />
-            <Route path={CONSTANTS.ROUTE_BROOKLINE} component={Brookline} />
-            <Route path={CONSTANTS.ROUTE_SOMERVILLE} component={Somerville} />
+            <Route
+              path={CONSTANTS.ROUTE_BROOKLINE}
+              render={props => (
+                <Cafe {...props} cafeLocation={CONSTANTS.BROOKLINE} />
+              )}
+            />
+            <Route
+              path={CONSTANTS.ROUTE_SOMERVILLE}
+              render={props => (
+                <Cafe {...props} cafeLocation={CONSTANTS.SOMERVILLE} />
+              )}
+            />
             <Route path={CONSTANTS.ROUTE_ACCOUNT} component={Account} />
             <Route path={CONSTANTS.ROUTE_SIGN_UP} component={SignUp} />
             <Route path={CONSTANTS.ROUTE_LOG_IN} component={Login} />

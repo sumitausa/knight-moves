@@ -6,6 +6,7 @@ import Menu from './Menu';
 import AboutJumbo from './AboutJumbo';
 import ParallaxJumbo from './ParallaxJumbo';
 import Spinner from 'react-bootstrap/Spinner';
+import * as CONSTANTS from './Constants';
 import { withFirebase } from './Firebase';
 
 import SocialMediaImage from '../shelves2.jpg';
@@ -37,22 +38,17 @@ class Brookline extends React.Component {
           </Spinner>
         ) : (
           <div id="top">
-            <LeadJumbo cafeLocation="Brookline" />
+            <LeadJumbo cafe={CONSTANTS.BROOKLINE} />
 
-            <AboutJumbo
-              story={this.state.cafeData.story}
-              howItWorks={this.state.cafeData.howItWorks}
-              contact={this.state.cafeData.contact}
-              hours={this.state.cafeData.hours}
-            />
+            <AboutJumbo cafe={CONSTANTS.BROOKLINE} />
 
             <ParallaxJumbo img={SocialMediaImage} />
 
-            <SocialMediaJumbo socialData={this.state.cafeData.socialLinks} />
+            <SocialMediaJumbo cafe={CONSTANTS.BROOKLINE} />
 
             <ParallaxJumbo img={MenuImage} />
 
-            <Menu menu={this.state.cafeData.menu} />
+            <Menu cafe={CONSTANTS.BROOKLINE} />
 
             {/* <ParallaxJumbo img={EventsImage} /> */}
 

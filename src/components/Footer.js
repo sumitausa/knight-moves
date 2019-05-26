@@ -5,15 +5,15 @@ import { withFirebase } from './Firebase';
 class Footer extends React.Component {
   state = {
     isLoading: true,
-    cafeObj: {}
+    socialLinks: {}
   };
 
   componentDidMount() {
-    this.props.firebase.brookline().on('value', snapshot => {
-      const cafeObj = snapshot.val();
+    this.props.firebase.brooklineSocialLinks().on('value', snapshot => {
+      const socialLinks = snapshot.val();
 
       this.setState({
-        cafeData: cafeObj,
+        socialLinks: socialLinks,
         isLoading: false
       });
     });
@@ -29,10 +29,7 @@ class Footer extends React.Component {
           <span />
         ) : (
           <span className="float-right mr-4">
-            <SocialMediaBar
-              className="btn-sm"
-              data={this.state.cafeData.socialLinks}
-            />
+            <SocialMediaBar className="btn-sm" data={this.state.socialLinks} />
           </span>
         )}
       </footer>

@@ -18,3 +18,5 @@ export const CAFE_HOW_IT_WORKS = 'How It Works';
 export const CAFE_MENU = 'Menu';
 export const CAFE_SOCIAL_LINKS = 'Social Links';
 export const CAFE_STORY = 'Story';
+
+export const CAFE_LOCATIONS = [BROOKLINE, SOMERVILLE];

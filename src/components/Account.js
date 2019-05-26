@@ -1,14 +1,13 @@
-import React from "react";
-import { PasswordForgetForm } from "./PasswordForget";
-import PasswordChangeForm from "./PasswordChange";
-import { withAuthorization } from "./Session";
+import React from 'react';
+import { PasswordForgetForm } from './PasswordForget';
+import Container from 'react-bootstrap/Container';
+import { withAuthorization } from './Session';
 
 const AccountPage = () => (
-  <div>
+  <Container>
     <h1>Account Page</h1>
     <PasswordForgetForm />
-    <PasswordChangeForm />
-  </div>
+  </Container>
 );
 
 const condition = authUser => !!authUser;

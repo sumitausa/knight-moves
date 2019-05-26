@@ -6,6 +6,7 @@ import EditPage from './EditPage';
 import UsersEditContainer from './UsersEditContainer';
 import ContactTyrel from './ContactTyrel';
 import * as CONSTANTS from './Constants';
+import { withAuthorization } from './Session';
 
 class Admin extends React.Component {
   state = {
@@ -33,53 +34,53 @@ class Admin extends React.Component {
 
   render() {
     return (
-      <Container>
-        <h1>ADMIN PAGE</h1>
-        <h3>What would you like to edit?</h3>
+      <React.Fragment>
+        <div className="adminPage h-100">
+          <Container>
+            <h1>ADMIN PAGE</h1>
+            <h3>What would you like to edit?</h3>
 
-        <DropdownButton
-          variant="cta"
-          title={this.state.selected ? this.state.selected : 'Select One'}
-          id="basic-nav-dropdown"
-          onSelect={this.handleSelect}
-          disabled={this.state.isButtonDisabled}
-        >
-          <Dropdown.Item eventKey={CONSTANTS.BROOKLINE}>
-            {CONSTANTS.BROOKLINE}
-          </Dropdown.Item>
-          <Dropdown.Item eventKey={CONSTANTS.SOMERVILLE}>
-            {CONSTANTS.SOMERVILLE}
-          </Dropdown.Item>
-          <Dropdown.Item eventKey={CONSTANTS.USERS}>
-            {CONSTANTS.USERS}
-          </Dropdown.Item>
-          <Dropdown.Item eventKey={CONSTANTS.SOMETHING_ELSE}>
-            {CONSTANTS.SOMETHING_ELSE}
-          </Dropdown.Item>
-        </DropdownButton>
+            <DropdownButton
+              variant="cta"
+              title={this.state.selected ? this.state.selected : 'Select One'}
+              id="basic-nav-dropdown"
+              onSelect={this.handleSelect}
+              disabled={this.state.isButtonDisabled}
+            >
+              <Dropdown.Item eventKey={CONSTANTS.BROOKLINE}>
+                {CONSTANTS.BROOKLINE}
+              </Dropdown.Item>
+              <Dropdown.Item eventKey={CONSTANTS.SOMERVILLE}>
+                {CONSTANTS.SOMERVILLE}
+              </Dropdown.Item>
+              <Dropdown.Item eventKey={CONSTANTS.USERS}>
+                {CONSTANTS.USERS}
+              </Dropdown.Item>
+              <Dropdown.Item eventKey={CONSTANTS.SOMETHING_ELSE}>
+                {CONSTANTS.SOMETHING_ELSE}
+              </Dropdown.Item>
+            </DropdownButton>
 
-        {this.state.selected === CONSTANTS.BROOKLINE && (
-          <EditPage
-            cafe={CONSTANTS.BROOKLINE}
-            enableButton={this.enableButton}
-            disableButton={this.disableButton}
-          />
-        )}
+            {this.state.selected === CONSTANTS.BROOKLINE && (
+              <EditPage cafe={CONSTANTS.BROOKLINE} />
+            )}
 
-        {this.state.selected === CONSTANTS.SOMERVILLE && (
-          <EditPage
-            cafe={CONSTANTS.SOMERVILLE}
-            enableButton={this.enableButton}
-            disableButton={this.disableButton}
-          />
-        )}
+            {this.state.selected === CONSTANTS.SOMERVILLE && (
+              <EditPage cafe={CONSTANTS.SOMERVILLE} />
+            )}
 
-        {this.state.selected === CONSTANTS.USERS && <UsersEditContainer />}
+            {this.state.selected === CONSTANTS.USERS && <UsersEditContainer />}
 
-        {this.state.selected === CONSTANTS.SOMETHING_ELSE && <ContactTyrel />}
-      </Container>
+            {this.state.selected === CONSTANTS.SOMETHING_ELSE && (
+              <ContactTyrel />
+            )}
+          </Container>
+        </div>
+      </React.Fragment>
     );
   }
 }
 
-export default Admin;
+const condition = authUser => !!authUser;
+
+export default withAuthorization(condition)(Admin);

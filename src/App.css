@@ -273,3 +273,15 @@ td {
     font-size: 1.5em;
     margin-right: 4px;
 }
+
+.qaContainer {
+    border: var(--color-primary-1) solid 1px;
+    background-color: var(--rgba-semi-transparent-4);
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.adminPage {
+    background-color: var(--color-primary-0);
+}

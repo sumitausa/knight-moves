@@ -1,4 +1,6 @@
-import React from "react";
+import React from 'react';
+import PropTypes from 'prop-types';
+import * as CONSTANTS from './Constants';
 
 const LeadJumbo = props => {
   return (
@@ -10,9 +12,7 @@ const LeadJumbo = props => {
         <div className="row">
           <div className="container col-sm-12 col-md-12 align-self-center">
             <div>
-              <h1 className="display-4">
-                Knight Moves Cafe {props.cafeLocation}
-              </h1>
+              <h1 className="display-4">Knight Moves Cafe {props.cafe}</h1>
               <p className="lead">
                 Thousands of Games | Two Cafes | One Community
               </p>
@@ -22,6 +22,10 @@ const LeadJumbo = props => {
       </div>
     </div>
   );
+};
+
+LeadJumbo.propTypes = {
+  cafe: PropTypes.oneOf(CONSTANTS.CAFE_LOCATIONS).isRequired
 };
 
 export default LeadJumbo;

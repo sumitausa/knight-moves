@@ -49,8 +49,9 @@ class Firebase {
 
   // *** Cafe API ***
 
-  brookline = () => this.db.ref('brookline');
+  story = () => this.db.ref('story');
 
+  brookline = () => this.db.ref('brookline');
   brooklineContact = () => this.db.ref('brookline/contact');
   brooklineHours = () => this.db.ref('brookline/hours');
   brooklineHowItWorks = () => this.db.ref('brookline/howItWorks');

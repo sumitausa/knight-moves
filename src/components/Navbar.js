@@ -1,4 +1,5 @@
 import React from 'react';
+import Button from 'react-bootstrap/Button';
 import SignOutButton from './SignOut';
 import { HashLink as Link } from 'react-router-hash-link';
 import { AuthUserContext } from './Session';
@@ -151,18 +152,31 @@ const Navbar = props => {
               </a>
             </div>
           </li>
-          <AuthUserContext.Consumer>
-            {authUser => {
-              return (
-                authUser && (
-                  <li className="nav-item active">
-                    <SignOutButton />
-                  </li>
-                )
-              );
-            }}
-          </AuthUserContext.Consumer>
         </ul>
+        <AuthUserContext.Consumer>
+          {authUser => {
+            return (
+              authUser && (
+                <React.Fragment>
+                  <ul className="navbar-nav ml-auto">
+                    <li className="nav-item active">
+                      <Button
+                        style={{ marginRight: '5px' }}
+                        variant="cta"
+                        href="/admin"
+                      >
+                        Admin
+                      </Button>
+                    </li>
+                    <li className="nav-item active">
+                      <SignOutButton />
+                    </li>
+                  </ul>
+                </React.Fragment>
+              )
+            );
+          }}
+        </AuthUserContext.Consumer>
       </div>
     </nav>
   );

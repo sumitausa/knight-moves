@@ -1,6 +1,7 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
 import { withFirebase } from './Firebase';
 import * as CONSTANTS from './Constants';
 
@@ -127,92 +128,94 @@ class EditContactPage extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <Form>
-          <Form.Group controlId="cafeName">
-            <Form.Label>Cafe Name</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Cafe Name"
-              value={this.state.cafeName}
-              name="cafeName"
-              onChange={this.handleChange}
-            />
-          </Form.Group>
-          <Form.Group controlId="streetAddress">
-            <Form.Label>Street Address</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Street Address"
-              value={this.state.streetAddress}
-              name="streetAddress"
-              onChange={this.handleChange}
-            />
-          </Form.Group>
-          <Form.Group controlId="city">
-            <Form.Label>City</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="City"
-              value={this.state.city}
-              name="city"
-              onChange={this.handleChange}
-            />
-          </Form.Group>
-          <Form.Group controlId="state">
-            <Form.Label>State</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="State"
-              value={this.state.state}
-              name="state"
-              onChange={this.handleChange}
-            />
-          </Form.Group>
-          <Form.Group controlId="country">
-            <Form.Label>Country</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Country"
-              value={this.state.country}
-              name="country"
-              onChange={this.handleChange}
-            />
-          </Form.Group>
-          <Form.Group controlId="zipCode">
-            <Form.Label>Zip Code</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Zip Code"
-              value={this.state.zipCode}
-              name="zipCode"
-              onChange={this.handleChange}
-            />
-          </Form.Group>
-          <Form.Group controlId="email">
-            <Form.Label>Email Address</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Email Address"
-              value={this.state.email}
-              name="email"
-              onChange={this.handleChange}
-            />
-          </Form.Group>
-          <Form.Group controlId="phone">
-            <Form.Label>Phone Number</Form.Label>
-            <Form.Control
-              type="text"
-              placeholder="Phone Number"
-              value={this.state.phone}
-              name="phone"
-              onChange={this.handleChange}
-            />
-          </Form.Group>
-          <Button variant="cta" onClick={this.saveData} type="button">
-            Save Contact
-          </Button>
-          <p>{this.state.message}</p>
-        </Form>
+        <Container className="col-md-6">
+          <Form>
+            <Form.Group controlId="cafeName">
+              <Form.Label>Cafe Name</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Cafe Name"
+                value={this.state.cafeName}
+                name="cafeName"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+            <Form.Group controlId="streetAddress">
+              <Form.Label>Street Address</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Street Address"
+                value={this.state.streetAddress}
+                name="streetAddress"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+            <Form.Group controlId="city">
+              <Form.Label>City</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="City"
+                value={this.state.city}
+                name="city"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+            <Form.Group controlId="state">
+              <Form.Label>State</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="State"
+                value={this.state.state}
+                name="state"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+            <Form.Group controlId="country">
+              <Form.Label>Country</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Country"
+                value={this.state.country}
+                name="country"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+            <Form.Group controlId="zipCode">
+              <Form.Label>Zip Code</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Zip Code"
+                value={this.state.zipCode}
+                name="zipCode"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+            <Form.Group controlId="email">
+              <Form.Label>Email Address</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Email Address"
+                value={this.state.email}
+                name="email"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+            <Form.Group controlId="phone">
+              <Form.Label>Phone Number</Form.Label>
+              <Form.Control
+                type="text"
+                placeholder="Phone Number"
+                value={this.state.phone}
+                name="phone"
+                onChange={this.handleChange}
+              />
+            </Form.Group>
+            <Button variant="cta" onClick={this.saveData} type="button">
+              Save Contact
+            </Button>
+            <p>{this.state.message}</p>
+          </Form>
+        </Container>
       </React.Fragment>
     );
   }

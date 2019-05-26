@@ -1,15 +1,14 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
+import Container from 'react-bootstrap/Container';
+import Jumbotron from 'react-bootstrap/Jumbotron';
 
 const Landing = () => {
   return (
-    <div
-      id="leadJumbo"
-      className="jumbotron jumbotron-fluid paral paralsec-landing"
-    >
-      <div className="container">
+    <Jumbotron fluid id="leadJumbo" className="paral paralsec-landing">
+      <Container>
         <div className="row">
-          <div className="container col-sm-12 col-md-10 align-self-center">
+          <Container className="col-sm-12 align-self-center">
             <div>
               <h1 className="display-4">Knight Moves Cafe</h1>
               <p className="lead">
@@ -32,10 +31,10 @@ const Landing = () => {
             >
               Somerville
             </Button>
-          </div>
+          </Container>
         </div>
-      </div>
-    </div>
+      </Container>
+    </Jumbotron>
   );
 };
 
