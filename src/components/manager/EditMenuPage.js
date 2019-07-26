@@ -2,8 +2,8 @@ import React from 'react';
 import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import * as CONSTANTS from './Constants';
-import { withFirebase } from './Firebase';
+import * as CONSTANTS from '../Constants';
+import { withFirebase } from '../Firebase';
 
 class EditMenuPage extends React.Component {
   state = {

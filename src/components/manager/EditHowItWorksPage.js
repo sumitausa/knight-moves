@@ -1,9 +1,9 @@
 import React from 'react';
-import * as CONSTANTS from './Constants';
+import * as CONSTANTS from '../Constants';
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
 import Container from 'react-bootstrap/Container';
-import { withFirebase } from './Firebase';
+import { withFirebase } from '../Firebase';
 
 class EditHowItWorksPage extends React.Component {
   state = {

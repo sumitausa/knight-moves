@@ -6,9 +6,9 @@ import EditHoursPage from './EditHoursPage';
 import EditHowItWorksPage from './EditHowItWorksPage';
 import EditMenuPage from './EditMenuPage';
 import EditSocialLinksPage from './EditSocialLinksPage';
-import * as CONSTANTS from './Constants';
+import * as CONSTANTS from '../Constants';
 
-import { withFirebase } from './Firebase';
+import { withFirebase } from '../Firebase';
 
 class EditPage extends React.Component {
   state = {

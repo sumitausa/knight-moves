@@ -6,8 +6,8 @@ import Story from './Story';
 import Hours from './Hours';
 import ContactInfo from './ContactInfo';
 import HowItWorks from './HowItWorks';
-import * as CONSTANTS from './Constants';
-import { withFirebase } from './Firebase';
+import * as CONSTANTS from '../Constants';
+import { withFirebase } from '../Firebase';
 
 const AboutJumbo = props => {
   return (

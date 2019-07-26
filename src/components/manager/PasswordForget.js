@@ -1,7 +1,7 @@
 import React from 'react';
 
-import { withFirebase } from './Firebase';
-import * as CONSTANTS from './Constants';
+import { withFirebase } from '../Firebase';
+import * as CONSTANTS from '../Constants';
 import Button from 'react-bootstrap/Button';
 import FormInput from './FormInput';
 

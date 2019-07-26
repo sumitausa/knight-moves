@@ -1,6 +1,6 @@
 import React from 'react';
 import Container from 'react-bootstrap/Container';
-import { withFirebase } from './Firebase';
+import { withFirebase } from '../Firebase';
 
 class UsersEditContainer extends React.Component {
   state = {

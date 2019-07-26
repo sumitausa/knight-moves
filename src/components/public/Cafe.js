@@ -6,7 +6,7 @@ import SocialMediaJumbo from './SocialMediaJumbo';
 import Menu from './Menu';
 import AboutJumbo from './AboutJumbo';
 import ParallaxJumbo from './ParallaxJumbo';
-import * as CONSTANTS from './Constants';
+import * as CONSTANTS from '../Constants';
 
 class Cafe extends React.Component {
   render() {

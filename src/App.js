@@ -2,16 +2,16 @@ import React from 'react';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import * as CONSTANTS from './components/Constants';
 import { withAuthentication } from './components/Session';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Landing from './components/Landing';
-import Cafe from './components/Cafe';
-import Account from './components/Account';
-import SignUp from './components/SignUp';
-import Login from './components/Login';
-import PasswordForget from './components/PasswordForget';
-import Admin from './components/Admin';
-import NotFound404 from './components/NotFound404';
+import Navbar from './components/public/Navbar';
+import Footer from './components/public/Footer';
+import Landing from './components/public/Landing';
+import Cafe from './components/public/Cafe';
+import Account from './components/manager/Account';
+import SignUp from './components/manager/SignUp';
+import Login from './components/manager/Login';
+import PasswordForget from './components/manager/PasswordForget';
+import Admin from './components/manager/Admin';
+import NotFound404 from './components/public/NotFound404';
 import './App.css';
 
 class App extends React.Component {

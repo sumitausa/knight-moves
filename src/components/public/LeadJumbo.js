@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import Jumbotron from 'react-bootstrap/Jumbotron';
-import * as CONSTANTS from './Constants';
+import * as CONSTANTS from '../Constants';
 
 const LeadJumbo = props => {
   return (

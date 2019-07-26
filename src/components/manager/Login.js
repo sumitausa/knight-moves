@@ -3,9 +3,9 @@ import { withRouter } from 'react-router-dom';
 
 import { SignUpLink } from './SignUp';
 import { PasswordForgetLink } from './PasswordForget';
-import { withFirebase } from './Firebase';
+import * as CONSTANTS from '../Constants';
+import { withFirebase } from '../Firebase';
 import Button from 'react-bootstrap/Button';
-import * as CONSTANTS from './Constants';
 
 const LoginPage = () => {
   return (

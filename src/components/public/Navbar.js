@@ -1,8 +1,8 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
-import SignOutButton from './SignOut';
+import SignOutButton from '../manager/SignOut';
 import { HashLink as Link } from 'react-router-hash-link';
-import { AuthUserContext } from './Session';
+import { AuthUserContext } from '../Session';
 
 const Navbar = props => {
   return (

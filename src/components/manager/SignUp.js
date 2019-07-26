@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import propTypes from 'prop-types';
 
-import { withFirebase } from './Firebase';
-import * as CONSTANTS from './Constants';
+import { withFirebase } from '../Firebase';
+import * as CONSTANTS from '../Constants';
 
 import Button from 'react-bootstrap/Button';
 

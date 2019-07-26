@@ -1,6 +1,6 @@
 import React from 'react';
 import SocialMediaBar from './SocialMediaBar';
-import { withFirebase } from './Firebase';
+import { withFirebase } from '../Firebase';
 
 class Footer extends React.Component {
   state = {

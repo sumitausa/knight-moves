@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import Container from 'react-bootstrap/Container';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import MenuGroup from './MenuGroup';
-import * as CONSTANTS from './Constants';
-import { withFirebase } from './Firebase';
+import * as CONSTANTS from '../Constants';
+import { withFirebase } from '../Firebase';
 
 class Menu extends React.Component {
   static propTypes = {

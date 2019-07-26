@@ -3,8 +3,8 @@ import PropTypes from 'prop-types';
 import Jumbotron from 'react-bootstrap/Jumbotron';
 import InstagramFeedContainer from './InstagramFeedContainer';
 import SocialMediaBar from './SocialMediaBar';
-import * as CONSTANTS from './Constants';
-import { withFirebase } from './Firebase';
+import * as CONSTANTS from '../Constants';
+import { withFirebase } from '../Firebase';
 
 class SocialMediaJumbo extends React.Component {
   static propTypes = {

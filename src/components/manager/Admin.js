@@ -6,8 +6,8 @@ import EditPage from './EditPage';
 import EditStoryPage from './EditStoryPage';
 import UsersEditContainer from './UsersEditContainer';
 import ContactTyrel from './ContactTyrel';
-import * as CONSTANTS from './Constants';
-import { withAuthorization } from './Session';
+import * as CONSTANTS from '../Constants';
+import { withAuthorization } from '../Session';
 
 class Admin extends React.Component {
   state = {

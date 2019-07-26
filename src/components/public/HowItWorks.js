@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import * as CONSTANTS from './Constants';
-import { withFirebase } from './Firebase';
+import * as CONSTANTS from '../Constants';
+import { withFirebase } from '../Firebase';
 
 class HowItWorks extends React.Component {
   static propTypes = {

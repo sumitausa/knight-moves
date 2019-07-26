@@ -1,9 +1,9 @@
 import React from 'react';
-import * as CONSTANTS from './Constants';
+import * as CONSTANTS from '../Constants';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import { withFirebase } from './Firebase';
+import { withFirebase } from '../Firebase';
 
 class EditHoursPage extends React.Component {
   state = {
