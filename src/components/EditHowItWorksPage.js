@@ -92,7 +92,7 @@ class EditHowItWorksPage extends React.Component {
       ? (questionList[index].question = e.target.value)
       : (questionList[index].answer = e.target.value);
 
-    this.setState({ questions: questionList });
+    this.setState({ questions: questionList, message: '' });
   };
 
   addQuestion = e => {
@@ -163,7 +163,7 @@ class EditHowItWorksPage extends React.Component {
               const listLength = this.state.questions.length;
 
               return (
-                <Container className="qaContainer" key={index}>
+                <Container className="editContainer" key={index}>
                   <Form.Group controlId={questionId}>
                     <Form.Label>Question</Form.Label>
                     <Form.Control
@@ -228,6 +228,7 @@ class EditHowItWorksPage extends React.Component {
             </Button>
           </Form>
         )}
+        <h2>{this.state.message}</h2>
       </React.Fragment>
     );
   }

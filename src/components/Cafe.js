@@ -8,32 +8,31 @@ import AboutJumbo from './AboutJumbo';
 import ParallaxJumbo from './ParallaxJumbo';
 import * as CONSTANTS from './Constants';
 
-import SocialMediaImage from '../shelves2.jpg';
-import MenuImage from '../baked_goods_in_platter.jpg';
+class Cafe extends React.Component {
+  render() {
+    return (
+      <div>
+        <div id="top">
+          <LeadJumbo cafe={this.props.cafeLocation} />
 
-const Cafe = props => {
-  return (
-    <div>
-      <div id="top">
-        <LeadJumbo cafe={props.cafeLocation} />
+          <AboutJumbo cafe={this.props.cafeLocation} />
 
-        <AboutJumbo cafe={props.cafeLocation} />
+          <ParallaxJumbo img={'imgs/socialMediaImage.jpg'} />
 
-        <ParallaxJumbo img={SocialMediaImage} />
+          <SocialMediaJumbo cafe={this.props.cafeLocation} />
 
-        <SocialMediaJumbo cafe={props.cafeLocation} />
+          <ParallaxJumbo img={'imgs/menuImage.jpg'} />
 
-        <ParallaxJumbo img={MenuImage} />
+          <Menu cafe={this.props.cafeLocation} />
 
-        <Menu cafe={props.cafeLocation} />
+          {/* <ParallaxJumbo img={EventsImage} /> */}
 
-        {/* <ParallaxJumbo img={EventsImage} /> */}
-
-        {/* <EventsJumbo /> */}
+          {/* <EventsJumbo /> */}
+        </div>
       </div>
-    </div>
-  );
-};
+    );
+  }
+}
 
 Cafe.propTypes = {
   cafeLocation: PropTypes.oneOf(CONSTANTS.CAFE_LOCATIONS).isRequired

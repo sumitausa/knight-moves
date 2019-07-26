@@ -56,6 +56,10 @@ body,
     overflow-x: hidden;
 }
 
+#preload {
+    display: none;
+}
+
 .flex-wrapper {
     display: flex;
     min-height: 100vh;
@@ -173,7 +177,6 @@ footer {
 .paralsec-landing {
     min-height: 100%;
     height: 100%;
-    background-image: url(shelves.jpg);
     background-repeat: no-repeat;
     background-size: cover;
     background-position: 50% 30%;
@@ -186,31 +189,8 @@ footer {
 
 .paralsec-main {
     min-height: 600px;
-    background-image: url(shelves.jpg);
     background-repeat: no-repeat;
     background-position: 50% 30%;
-}
-
-.paralsec2 {
-    min-height: 200px;
-    background-image: url(baked_goods_in_platter.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.paralsec3 {
-    min-height: 200px;
-    background-image: url(shelves2.jpg);
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-.paralsec4 {
-    min-height: 200px;
-    background-image: url(game_with_logo.jpg);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 50% 15%;
 }
 
 /********************************************************************/
@@ -274,9 +254,18 @@ td {
     margin-right: 4px;
 }
 
-.qaContainer {
+.editContainer {
+    border: var(--color-primary-1) solid 1px;
+    background-color: var(--rgba-primary-3);
+    padding: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.innerEditContainer {
     border: var(--color-primary-1) solid 1px;
     background-color: var(--rgba-semi-transparent-4);
+    color: var(--color-primary-1);
     padding: 10px;
     margin-top: 10px;
     margin-bottom: 10px;

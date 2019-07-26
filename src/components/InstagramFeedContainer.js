@@ -3,6 +3,7 @@ import Button from 'react-bootstrap/Button';
 import Card from 'react-bootstrap/Card';
 import './ImageWrapper.css';
 import axios from 'axios';
+import LinesEllipsis from 'react-lines-ellipsis';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
@@ -147,7 +148,9 @@ class InstagramFeedContainer extends React.Component {
                   <Card
                     style={{
                       height: '450px',
-                      backgroundColor: 'var(--color-primary-4)'
+                      backgroundColor: 'var(--color-primary-4)',
+                      textOverflow: 'ellipsis',
+                      overflow: 'hidden'
                     }}
                   >
                     <a href={image.permalink}>
@@ -163,11 +166,11 @@ class InstagramFeedContainer extends React.Component {
                       />
                     </a>
                     <Card.Body>
-                      <Card.Text>
-                        {image.caption.slice(0, 100) === image.caption
-                          ? image.caption
-                          : image.caption.slice(0, 100) + '...'}
-                      </Card.Text>
+                      <LinesEllipsis
+                        text={image.caption.replace('\n', '')}
+                        maxLine="5"
+                        trimRight
+                      />
                     </Card.Body>
                   </Card>
                 </div>

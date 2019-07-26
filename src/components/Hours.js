@@ -14,6 +14,16 @@ class Hours extends React.Component {
   };
 
   componentDidMount() {
+    this.getHoursData();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.cafe !== this.props.cafe) {
+      this.getHoursData();
+    }
+  }
+
+  getHoursData = () => {
     const hoursRef = this.getHoursRef();
 
     hoursRef.on('value', snapshot => {
@@ -24,7 +34,7 @@ class Hours extends React.Component {
         isLoading: false
       });
     });
-  }
+  };
 
   getHoursRef() {
     switch (this.props.cafe) {

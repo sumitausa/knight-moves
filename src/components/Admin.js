@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import DropdownButton from 'react-bootstrap/DropdownButton';
 import Dropdown from 'react-bootstrap/Dropdown';
 import EditPage from './EditPage';
+import EditStoryPage from './EditStoryPage';
 import UsersEditContainer from './UsersEditContainer';
 import ContactTyrel from './ContactTyrel';
 import * as CONSTANTS from './Constants';
@@ -53,6 +54,9 @@ class Admin extends React.Component {
               <Dropdown.Item eventKey={CONSTANTS.SOMERVILLE}>
                 {CONSTANTS.SOMERVILLE}
               </Dropdown.Item>
+              <Dropdown.Item eventKey={CONSTANTS.CAFE_STORY}>
+                {CONSTANTS.CAFE_STORY}
+              </Dropdown.Item>
               <Dropdown.Item eventKey={CONSTANTS.USERS}>
                 {CONSTANTS.USERS}
               </Dropdown.Item>
@@ -68,6 +72,8 @@ class Admin extends React.Component {
             {this.state.selected === CONSTANTS.SOMERVILLE && (
               <EditPage cafe={CONSTANTS.SOMERVILLE} />
             )}
+
+            {this.state.selected === CONSTANTS.CAFE_STORY && <EditStoryPage />}
 
             {this.state.selected === CONSTANTS.USERS && <UsersEditContainer />}
 

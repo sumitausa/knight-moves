@@ -1,5 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Container from 'react-bootstrap/Container';
+import Jumbotron from 'react-bootstrap/Jumbotron';
 import MenuGroup from './MenuGroup';
 import * as CONSTANTS from './Constants';
 import { withFirebase } from './Firebase';
@@ -15,6 +17,16 @@ class Menu extends React.Component {
   };
 
   componentDidMount() {
+    this.getMenuData();
+  }
+
+  componentDidUpdate(prevProps) {
+    if (prevProps.cafe !== this.props.cafe) {
+      this.getMenuData();
+    }
+  }
+
+  getMenuData = () => {
     const menuRef = this.getMenuRef();
 
     menuRef.on('value', snapshot => {
@@ -25,7 +37,7 @@ class Menu extends React.Component {
         isLoading: false
       });
     });
-  }
+  };
 
   getMenuRef() {
     switch (this.props.cafe) {
@@ -40,27 +52,24 @@ class Menu extends React.Component {
   render() {
     return (
       <React.Fragment>
-        <div
-          id="menu"
-          className="jumbotron jumbotron-fluid paral paralsec-text"
-        >
+        <Jumbotron fluid id="menu" className="paral paralsec-text">
           <div>
             <div className="row">
-              <div className="container">
+              <Container>
                 <h1 className="display-4">Our Menu</h1>
                 {Object.keys(this.state.menu).map(key => {
                   return (
                     <MenuGroup
                       key={key}
-                      groupName={key}
-                      products={this.state.menu[key]}
+                      groupName={this.state.menu[key].name}
+                      products={this.state.menu[key].products}
                     />
                   );
                 })}
-              </div>
+              </Container>
             </div>
           </div>
-        </div>
+        </Jumbotron>
       </React.Fragment>
     );
   }

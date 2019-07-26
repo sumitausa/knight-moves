@@ -14,42 +14,53 @@ import Admin from './components/Admin';
 import NotFound404 from './components/NotFound404';
 import './App.css';
 
-const App = () => {
-  return (
-    <Router>
-      <div className="flex-wrapper">
-        <Navbar />
-        <div className="main-content">
-          <Switch>
-            <Route path={CONSTANTS.ROUTE_LANDING} exact component={Landing} />
-            <Route
-              path={CONSTANTS.ROUTE_BROOKLINE}
-              render={props => (
-                <Cafe {...props} cafeLocation={CONSTANTS.BROOKLINE} />
-              )}
-            />
-            <Route
-              path={CONSTANTS.ROUTE_SOMERVILLE}
-              render={props => (
-                <Cafe {...props} cafeLocation={CONSTANTS.SOMERVILLE} />
-              )}
-            />
-            <Route path={CONSTANTS.ROUTE_ACCOUNT} component={Account} />
-            <Route path={CONSTANTS.ROUTE_SIGN_UP} component={SignUp} />
-            <Route path={CONSTANTS.ROUTE_LOG_IN} component={Login} />
-            <Route path={CONSTANTS.ROUTE_ADMIN} component={Admin} />
-            <Route
-              path={CONSTANTS.ROUTE_PASSWORD_FORGET}
-              component={PasswordForget}
-            />
-            <Route component={NotFound404} />
-          </Switch>
-        </div>
+class App extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <Router>
+          <div className="flex-wrapper">
+            <Navbar />
+            <div className="main-content">
+              <Switch>
+                <Route
+                  path={CONSTANTS.ROUTE_LANDING}
+                  exact
+                  render={props => <Landing {...props} />}
+                />
+                <Route
+                  path={CONSTANTS.ROUTE_BROOKLINE}
+                  render={props => (
+                    <Cafe {...props} cafeLocation={CONSTANTS.BROOKLINE} />
+                  )}
+                />
+                <Route
+                  path={CONSTANTS.ROUTE_SOMERVILLE}
+                  render={props => (
+                    <Cafe {...props} cafeLocation={CONSTANTS.SOMERVILLE} />
+                  )}
+                />
+                <Route path={CONSTANTS.ROUTE_ACCOUNT} component={Account} />
+                <Route path={CONSTANTS.ROUTE_SIGN_UP} component={SignUp} />
+                <Route path={CONSTANTS.ROUTE_LOG_IN} component={Login} />
+                <Route
+                  path={CONSTANTS.ROUTE_ADMIN}
+                  render={props => <Admin {...props} />}
+                />
+                <Route
+                  path={CONSTANTS.ROUTE_PASSWORD_FORGET}
+                  component={PasswordForget}
+                />
+                <Route component={NotFound404} />
+              </Switch>
+            </div>
 
-        <Footer />
-      </div>
-    </Router>
-  );
-};
+            <Footer />
+          </div>
+        </Router>
+      </React.Fragment>
+    );
+  }
+}
 
 export default withAuthentication(App);

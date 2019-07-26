@@ -1,7 +1,6 @@
 import React from 'react';
 import Form from 'react-bootstrap/Form';
 import Button from 'react-bootstrap/Button';
-import * as CONSTANTS from './Constants';
 import { withFirebase } from './Firebase';
 
 const PARAGRAPH_SEPARATOR = '\n-----\n';
@@ -40,17 +39,16 @@ class EditStoryPage extends React.Component {
   }
 
   getStoryRef = () => {
-    switch (this.props.cafe) {
-      case CONSTANTS.BROOKLINE:
-        return this.props.firebase.brooklineStory();
-      case CONSTANTS.SOMERVILLE:
-        return this.props.firebase.somervilleStory();
-      default:
-        this.setState({
-          message:
-            'Something is very wrong with the edit page. Contact Tyrel ASAP.'
-        });
-        return null;
+    const storyRef = this.props.firebase.story();
+
+    if (!storyRef) {
+      this.setState({
+        message:
+          'Something is very wrong with the edit page. Contact Tyrel ASAP.'
+      });
+      return null;
+    } else {
+      return storyRef;
     }
   };
 
@@ -112,7 +110,7 @@ class EditStoryPage extends React.Component {
         <Button variant="cta" onClick={this.saveData} type="button">
           Save Story
         </Button>
-        <p>{this.state.message}</p>
+        <h3>{this.state.message}</h3>
       </React.Fragment>
     );
   }

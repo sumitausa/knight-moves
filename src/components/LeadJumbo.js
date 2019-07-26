@@ -1,12 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+import Jumbotron from 'react-bootstrap/Jumbotron';
 import * as CONSTANTS from './Constants';
 
 const LeadJumbo = props => {
   return (
-    <div
+    <Jumbotron
+      fluid
       id="leadJumbo"
-      className="jumbotron jumbotron-fluid paral paralsec-main"
+      className="paral paralsec-main"
+      style={{
+        backgroundImage: 'url(/imgs/leadImage.jpg)'
+      }}
     >
       <div className="container">
         <div className="row">
@@ -20,7 +25,7 @@ const LeadJumbo = props => {
           </div>
         </div>
       </div>
-    </div>
+    </Jumbotron>
   );
 };
 

@@ -1,13 +1,10 @@
-import React from "react";
+import React from 'react';
+import Jumbotron from 'react-bootstrap/Jumbotron';
 
 const EventsJumbo = () => {
   return (
     <React.Fragment>
-      <div className="jumbotron jumbotron-fluid paral paralsec4" />
-      <div
-        id="events"
-        className="jumbotron jumbotron-fluid paral paralsec-text"
-      >
+      <Jumbotron fluid id="events" className="paral paralsec-text">
         <div>
           <div className="row">
             <div className="container col-md-8">
@@ -29,7 +26,7 @@ const EventsJumbo = () => {
             </div>
           </div>
         </div>
-      </div>
+      </Jumbotron>
     </React.Fragment>
   );
 };

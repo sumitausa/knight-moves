@@ -36,9 +36,9 @@ class UsersEditContainer extends React.Component {
               should see exactly two users on this page (yourself, and Tyrel).
               If you see more users, you have a security issue, and should
               contact Tyrel immediately. You're not processing any payments or
-              anything, so it's not like you would face a lawsuit or anything,
-              but no one should be able to sign up. Any one who HAS signed up
-              can edit the site.
+              anything, so it shouldn't cost you any money, but no one should be
+              able to sign up. Any one who HAS signed up can access this page
+              and edit the site.
             </p>
             <ul>
               {Object.keys(this.state.users).map(id => {

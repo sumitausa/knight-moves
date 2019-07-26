@@ -7,15 +7,8 @@ const MenuGroup = props => {
     <div className="container">
       <h2>{props.groupName}</h2>
       <div className="row m-5">
-        {Object.keys(props.products).map(item => {
-          return (
-            <MenuItem
-              key={item}
-              item={item}
-              price={props.products[item].price}
-              description={props.products[item].description}
-            />
-          );
+        {Object.keys(props.products).map(key => {
+          return <MenuItem key={key} item={props.products[key]} />;
         })}
       </div>
     </div>

@@ -6,7 +6,6 @@ import EditHoursPage from './EditHoursPage';
 import EditHowItWorksPage from './EditHowItWorksPage';
 import EditMenuPage from './EditMenuPage';
 import EditSocialLinksPage from './EditSocialLinksPage';
-import EditStoryPage from './EditStoryPage';
 import * as CONSTANTS from './Constants';
 
 import { withFirebase } from './Firebase';
@@ -121,10 +120,6 @@ class EditPage extends React.Component {
 
                 {this.state.selected === CONSTANTS.CAFE_SOCIAL_LINKS && (
                   <EditSocialLinksPage cafe={this.props.cafe} />
-                )}
-
-                {this.state.selected === CONSTANTS.CAFE_STORY && (
-                  <EditStoryPage cafe={this.props.cafe} />
                 )}
               </div>
             )}

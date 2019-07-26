@@ -1,13 +1,7 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import * as CONSTANTS from './Constants';
 import { withFirebase } from './Firebase';
 
 class Story extends React.Component {
-  static propTypes = {
-    cafe: PropTypes.oneOf(CONSTANTS.CAFE_LOCATIONS).isRequired
-  };
-
   state = {
     isLoading: true,
     story: {}
