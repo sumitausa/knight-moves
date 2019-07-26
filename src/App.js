@@ -4,7 +4,7 @@ import * as CONSTANTS from './components/Constants';
 import { withAuthentication } from './components/Session';
 import Navbar from './components/public/Navbar';
 import Footer from './components/public/Footer';
-import Landing from './components/public/Landing';
+import Landing from './components/public/landing';
 import Cafe from './components/public/Cafe';
 import Account from './components/manager/Account';
 import SignUp from './components/manager/SignUp';
