@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import LeadJumbo from './LeadJumbo';
 //import EventsJumbo from './EventsJumbo';
 import SocialMediaJumbo from './SocialMediaJumbo';
-import Menu from './Menu';
+import Menu from './menu_jumbo';
 import AboutJumbo from './AboutJumbo';
 import ParallaxJumbo from './ParallaxJumbo';
 import * as CONSTANTS from '../Constants';
