@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import MenuItem from './MenuItem';
+import MenuItem from './menu_item';
 
 const MenuGroup = props => {
   return (

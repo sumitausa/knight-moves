@@ -1,0 +1,71 @@
+[debug] [2019-08-01T23:18:59.864Z] ----------------------------------------------------------------------
+[debug] [2019-08-01T23:18:59.867Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Tyrel\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2019-08-01T23:18:59.867Z] CLI Version:   6.7.0
+[debug] [2019-08-01T23:18:59.867Z] Platform:      win32
+[debug] [2019-08-01T23:18:59.867Z] Node Version:  v10.15.1
+[debug] [2019-08-01T23:18:59.873Z] Time:          Thu Aug 01 2019 19:18:59 GMT-0400 (Eastern Daylight Time)
+[debug] [2019-08-01T23:18:59.873Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-01T23:18:59.896Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-01T23:18:59.896Z] > authorizing via signed-in user
+[debug] [2019-08-01T23:18:59.896Z] [iam] checking project knight-moves-18e5d for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-08-01T23:18:59.898Z] > refreshing access token with scopes: ["email","https://www.googleapis.com/auth/cloud-platform","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","openid"]
+[debug] [2019-08-01T23:18:59.898Z] >>> HTTP REQUEST POST https://www.googleapis.com/oauth2/v3/token  
+ <request body omitted>
+[debug] [2019-08-01T23:19:00.087Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-01T23:19:00.093Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/knight-moves-18e5d:testIamPermissions  
+
+[debug] [2019-08-01T23:19:00.419Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-01T23:19:00.420Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/knight-moves-18e5d  
+ 
+[debug] [2019-08-01T23:19:00.768Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'knight-moves-18e5d'...
+[info] 
+[info] i  deploying hosting
+[debug] [2019-08-01T23:19:00.776Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/knight-moves-18e5d/versions  
+
+[debug] [2019-08-01T23:19:01.743Z] <<< HTTP RESPONSE 200
+[info] i  hosting[knight-moves-18e5d]: beginning deploy...
+[info] i  hosting[knight-moves-18e5d]: found 16 files in build
+[debug] [2019-08-01T23:19:01.765Z] [hosting] hash cache [YnVpbGQ] load error: lines is not defined
+[debug] [2019-08-01T23:19:02.260Z] [hosting] hash cache [YnVpbGQ] stored for 16 files
+[debug] [2019-08-01T23:19:02.261Z] [hosting][hash queue][FINAL]
+[debug] [2019-08-01T23:19:02.261Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/knight-moves-18e5d/versions/b2d39e0a788cde31:populateFiles  
+ <request body omitted>
+[debug] [2019-08-01T23:19:03.263Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-01T23:19:03.264Z] [hosting][populate queue][FINAL]
+[debug] [2019-08-01T23:19:03.264Z] [hosting] uploads queued: 0
+[debug] [2019-08-01T23:19:03.264Z] [hosting][upload queue][FINAL]
+[info] +  hosting[knight-moves-18e5d]: file upload complete
+[debug] [2019-08-01T23:19:03.265Z] [hosting] deploy completed after 1520ms
+[debug] [2019-08-01T23:19:03.409Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "knight-moves-18e5d"
+    },
+    "site": "knight-moves-18e5d",
+    "version": "sites/knight-moves-18e5d/versions/b2d39e0a788cde31"
+  }
+]
+[info] i  hosting[knight-moves-18e5d]: finalizing version...
+[debug] [2019-08-01T23:19:03.410Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/knight-moves-18e5d/versions/b2d39e0a788cde31?updateMask=status  
+
+[debug] [2019-08-01T23:19:03.923Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-01T23:19:03.923Z] [hosting] finalized version for knight-moves-18e5d:
+[info] +  hosting[knight-moves-18e5d]: version finalized
+[info] i  hosting[knight-moves-18e5d]: releasing new version...
+[debug] [2019-08-01T23:19:03.924Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/knight-moves-18e5d/releases?version_name=sites/knight-moves-18e5d/versions/b2d39e0a788cde31  
+
