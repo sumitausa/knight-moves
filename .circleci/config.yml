@@ -33,8 +33,16 @@ jobs:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
 
-      # run tests!
       - run: npm test
+
+  deploy:
+    docker:
+      - image: circleci/node:7.10
+    working_directory: /tmp/my-project
+    steps:
+      - run:
+        name: Deploy Master to Firebase
+        command: ./node_modules/.bin/firebase deploy --token=$FIREBASE_DEPLOY_TOKEN
 
 workflows:
   version: 2
@@ -50,3 +58,6 @@ workflows:
       - deploy:
           requires:
             - hold
+          filters:
+            branches:
+              only: master
