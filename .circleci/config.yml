@@ -35,3 +35,12 @@ jobs:
 
       # run tests!
       - run: npm test
+
+  hold:
+    type: approval
+    requires:
+      - build
+
+  deploy:
+    requires:
+      - hold
