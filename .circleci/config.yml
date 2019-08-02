@@ -35,6 +35,8 @@ jobs:
 
       - run: npm test
 
+      - run: npm run build
+
       - run: npm install firebase-tools
       - run:
           name: Deploy Master to Firebase
