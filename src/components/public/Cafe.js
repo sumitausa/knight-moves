@@ -17,11 +17,11 @@ class Cafe extends React.Component {
 
           <AboutJumbo cafe={this.props.cafeLocation} />
 
-          <ParallaxJumbo img={'imgs/socialMediaImage.jpg'} />
+          <ParallaxJumbo img={'/imgs/socialMediaImage.jpg'} />
 
           <SocialMediaJumbo cafe={this.props.cafeLocation} />
 
-          <ParallaxJumbo img={'imgs/menuImage.jpg'} />
+          <ParallaxJumbo img={'/imgs/menuImage.jpg'} />
 
           <Menu cafe={this.props.cafeLocation} />
 
