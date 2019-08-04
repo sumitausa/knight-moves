@@ -4,6 +4,17 @@
 #
 version: 2
 jobs:
+  shellcheck:
+    docker:
+      - image: koalaman/shellcheck-alpine:stable
+    steps:
+      - checkout
+      - run:
+          name: Check Scripts
+          command: |
+            find . -type f -name '*.sh' | wc -l
+            find . -type f -name '*.sh' | xargs shellcheck --external-sources
+
   build:
     docker:
       - image: circleci/node:10.15.1
@@ -14,16 +25,14 @@ jobs:
       - checkout
 
       - run:
-          name: Assert images exist
-          command: pwd
-            ls
+          shell: /bin/sh
+          command: |
+            echo Checking for images
+            set -o nounset
+            set -o errexit
+            set -o pipefail
             $LANDING=./public/imgs/landingImage.jpg
-            if test -f "$LANDING" then
-            echo "$LANDING exists"
-            else
-            echo "$LANDING does not exist"
-            exit 1
-            fi
+            [[ -f $LANDING ]] && echo "$LANDING exists" || (echo "$LANDING does not exist" && exit 1)
 
       - run: npm install
 
@@ -54,7 +63,10 @@ workflows:
 
   buildTest:
     jobs:
-      - build # also runs the tests
+      - shellcheck
+      - build: # also runs the tests
+          requires:
+            - shellcheck
 
   buildTestDeploy:
     triggers:
@@ -65,4 +77,5 @@ workflows:
               only:
                 - master
     jobs:
+      - shellcheck
       - deploy # also runs build and test
