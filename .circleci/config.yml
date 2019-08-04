@@ -24,15 +24,13 @@ jobs:
     steps:
       - checkout
 
-      - run:
-          shell: /bin/sh
-          command: |
-            echo Checking for images
-            set -o nounset
-            set -o errexit
-            set -o pipefail
-            $LANDING=./public/imgs/landingImage.jpg
-            [[ -f $LANDING ]] && echo "$LANDING exists" || (echo "$LANDING does not exist" && exit 1)
+      - run: |
+          echo Checking for images
+          set -o nounset
+          set -o errexit
+          set -o pipefail
+          $LANDING=./public/imgs/landingImage.jpg
+          [[ -f $LANDING ]] && echo "$LANDING exists" || (echo "$LANDING does not exist" && exit 1)
 
       - run: npm install
 
