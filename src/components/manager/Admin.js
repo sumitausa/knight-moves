@@ -5,6 +5,7 @@ import Dropdown from 'react-bootstrap/Dropdown';
 import EditPage from './EditPage';
 import EditStoryPage from './EditStoryPage';
 import UsersEditContainer from './UsersEditContainer';
+import EditImagesPage from './EditImagesPage';
 import ContactTyrel from './ContactTyrel';
 import * as CONSTANTS from '../Constants';
 import { withAuthorization } from '../Session';
@@ -60,6 +61,9 @@ class Admin extends React.Component {
               <Dropdown.Item eventKey={CONSTANTS.USERS}>
                 {CONSTANTS.USERS}
               </Dropdown.Item>
+              <Dropdown.Item eventKey={CONSTANTS.IMAGES}>
+                {CONSTANTS.IMAGES}
+              </Dropdown.Item>
               <Dropdown.Item eventKey={CONSTANTS.SOMETHING_ELSE}>
                 {CONSTANTS.SOMETHING_ELSE}
               </Dropdown.Item>
@@ -76,6 +80,8 @@ class Admin extends React.Component {
             {this.state.selected === CONSTANTS.CAFE_STORY && <EditStoryPage />}
 
             {this.state.selected === CONSTANTS.USERS && <UsersEditContainer />}
+
+            {this.state.selected === CONSTANTS.IMAGES && <EditImagesPage />}
 
             {this.state.selected === CONSTANTS.SOMETHING_ELSE && (
               <ContactTyrel />

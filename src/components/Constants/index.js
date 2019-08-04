@@ -10,6 +10,7 @@ export const ROUTE_SOMERVILLE = '/somerville';
 export const BROOKLINE = 'Brookline';
 export const SOMERVILLE = 'Somerville';
 export const USERS = 'Users';
+export const IMAGES = 'Images';
 export const SOMETHING_ELSE = 'Something Else';
 
 export const CAFE_CONTACT = 'Contact';
