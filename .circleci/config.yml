@@ -13,6 +13,16 @@ jobs:
     steps:
       - checkout
 
+      - run:
+          name: Assert images exist
+          command: $LANDING=./public/imgs/landingImage.jpg
+            if test -f "$LANDING"; then
+            echo "$LANDING exists";
+            else
+            echo "$LANDING does not exist"
+            exit 1
+            fi
+
       - run: npm install
 
       - run: npm test
