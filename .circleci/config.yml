@@ -4,6 +4,17 @@
 #
 version: 2
 jobs:
+  shellcheck:
+    docker:
+      - image: koalaman/shellcheck-alpine:stable
+    steps:
+      - checkout
+      - run:
+          name: Check Scripts
+          command: |
+            find . -type f -name '*.sh' | wc -l
+            find . -type f -name '*.sh' | xargs shellcheck --external-sources
+
   build:
     docker:
       - image: circleci/node:10.15.1
@@ -12,6 +23,36 @@ jobs:
 
     steps:
       - checkout
+
+      - run:
+          name: Ensure site images exist
+          command: |
+            echo Checking for images
+
+            set -o nounset
+            set -o errexit
+            set -o pipefail
+
+            LANDING_IMG=./public/imgs/landingImage.jpg
+            LEAD_IMG=./public/imgs/leadImage.jpg
+            MENU_IMG=./public/imgs/menuImage.jpg
+            SOCIAL_MEDIA_IMG=./public/imgs/socialMediaImage.jpg
+            EVENT_IMG=./public/imgs/eventsImage.jpg
+
+            [[ -f $LANDING_IMG ]] && echo "$LANDING_IMG exists" || \
+              (echo "$LANDING_IMG does not exist" && exit 1)
+
+            [[ -f $LEAD_IMG ]] && echo "$LEAD_IMG exists" || \
+              (echo "$LEAD_IMG does not exist" && exit 1)
+
+            [[ -f $MENU_IMG ]] && echo "$MENU_IMG exists" || \
+              (echo "$MENU_IMG does not exist" && exit 1)
+
+            [[ -f $SOCIAL_MEDIA_IMG ]] && echo "$SOCIAL_MEDIA_IMG exists" || \
+              (echo "$SOCIAL_MEDIA_IMG does not exist" && exit 1)
+
+            [[ -f $EVENT_IMG ]] && echo "$EVENT_IMG exists" || \
+              (echo "$EVENT_IMG does not exist" && exit 1)
 
       - run: npm install
 
@@ -42,7 +83,10 @@ workflows:
 
   buildTest:
     jobs:
+      #- shellcheck
       - build # also runs the tests
+        # requires:
+        #   - shellcheck
 
   buildTestDeploy:
     triggers:
@@ -53,4 +97,5 @@ workflows:
               only:
                 - master
     jobs:
+      #- shellcheck
       - deploy # also runs build and test
