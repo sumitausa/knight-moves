@@ -45,13 +45,12 @@ workflows:
       - build # also runs the tests
 
   buildTestDeploy:
-    jobs:
-      - deploy # also runs build and test
-
     triggers:
       - schedule:
-        cron: '0 0 * * *'
-        filters:
-          branches:
-            only:
-              - master
+          cron: '0 0 * * *'
+          filters:
+            branches:
+              only:
+                - master
+    jobs:
+      - deploy # also runs build and test
