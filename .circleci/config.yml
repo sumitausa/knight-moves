@@ -16,8 +16,8 @@ jobs:
       - run:
           name: Assert images exist
           command: $LANDING=./public/imgs/landingImage.jpg
-            if test -f "$LANDING"; then
-            echo "$LANDING exists";
+            if test -f "$LANDING" then
+            echo "$LANDING exists"
             else
             echo "$LANDING does not exist"
             exit 1
