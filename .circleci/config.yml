@@ -24,7 +24,9 @@ jobs:
     steps:
       - checkout
 
-      - run: |
+      - run:
+        name: Ensure site images exist
+        command: |
           echo Checking for images
 
           set -o nounset
