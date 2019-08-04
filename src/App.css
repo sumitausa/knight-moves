@@ -149,6 +149,13 @@ footer {
     text-align: center;
 }
 
+code {
+    border-radius: 3px;
+    padding: 4px;
+    color: var(--color-primary-1);
+    background-color: var(--color-primary-4);
+}
+
 .icon-404 {
     margin-right: 10px;
     animation-name: spin;
