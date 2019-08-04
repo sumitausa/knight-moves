@@ -29,7 +29,7 @@ jobs:
           set -o nounset
           set -o errexit
           set -o pipefail
-          LANDING=./public/imgs/landingImage.jpg
+          LANDING=./public/imgs/landingImage1234.jpg
           [[ -f $LANDING ]] && echo "$LANDING exists" || (echo "$LANDING does not exist" && exit 1)
 
       - run: npm install
