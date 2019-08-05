@@ -83,10 +83,7 @@ workflows:
 
   buildTest:
     jobs:
-      #- shellcheck
       - build # also runs the tests
-        # requires:
-        #   - shellcheck
 
   buildTestDeploy:
     triggers:
@@ -97,5 +94,4 @@ workflows:
               only:
                 - master
     jobs:
-      #- shellcheck
       - deploy # also runs build and test
