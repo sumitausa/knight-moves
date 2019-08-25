@@ -1,6 +1,6 @@
 import React from 'react';
 import Button from 'react-bootstrap/Button';
-import SignOutButton from '../manager/SignOut';
+import SignOutButton from '../manager/sign_out_button';
 import { HashLink as Link } from 'react-router-hash-link';
 import { AuthUserContext } from '../Session';
 
