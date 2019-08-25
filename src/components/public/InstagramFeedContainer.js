@@ -87,7 +87,7 @@ class InstagramFeedContainer extends React.Component {
 
   handleWindowResize = () => {
     const width = window.innerWidth;
-    let newImgPerPage = 3;
+    let newImgPerPage;
 
     if (width < BOOTSTRAP_BREAKPOINTS.MD) {
       newImgPerPage = 1;
