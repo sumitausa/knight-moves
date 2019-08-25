@@ -1,6 +1,6 @@
 import React from 'react';
 import { shallow } from 'enzyme';
-import Landing from './landing';
+import Landing from '../landing';
 import Button from 'react-bootstrap/Button';
 
 describe('Landing', () => {
