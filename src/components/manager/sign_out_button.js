@@ -5,11 +5,7 @@ import PropTypes from "prop-types";
 
 const SignOutButton = ({ firebase }) => {
   return (
-    <Button
-      enzymeId="signOutButtonSelector"
-      variant="cta"
-      onClick={firebase.doSignOut}
-    >
+    <Button variant="cta" onClick={firebase.doSignOut}>
       Sign Out
     </Button>
   );

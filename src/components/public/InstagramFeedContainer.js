@@ -1,16 +1,15 @@
-import React from 'react';
-import Button from 'react-bootstrap/Button';
-import Card from 'react-bootstrap/Card';
-import './ImageWrapper.css';
-import axios from 'axios';
-import LinesEllipsis from 'react-lines-ellipsis';
+import React from "react";
+import Button from "react-bootstrap/Button";
+import Card from "react-bootstrap/Card";
+import "./ImageWrapper.css";
+import axios from "axios";
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { library } from "@fortawesome/fontawesome-svg-core";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faChevronLeft,
   faChevronRight
-} from '@fortawesome/free-solid-svg-icons';
+} from "@fortawesome/free-solid-svg-icons";
 
 library.add(faChevronLeft);
 library.add(faChevronRight);
@@ -26,7 +25,7 @@ library.add(faChevronRight);
  */
 
 const desiredImageFields =
-  'caption,id,media_type,media_url,permalink,owner,timestamp';
+  "caption,id,media_type,media_url,permalink,owner,timestamp";
 
 const url = `https://graph.facebook.com/${
   process.env.REACT_APP_INSTAGRAM_BIZ_USER_ID
@@ -53,19 +52,19 @@ class InstagramFeedContainer extends React.Component {
 
     this.createInstagramAutoScroller();
 
-    window.addEventListener('resize', this.handleWindowResize.bind(this));
+    window.addEventListener("resize", this.handleWindowResize.bind(this));
     this.handleWindowResize();
   }
 
   componentWillUnmount() {
     clearInterval(this.interval);
-    window.removeEventListener('resize', this.handleWindowResize);
+    window.removeEventListener("resize", this.handleWindowResize);
   }
 
   fetchInstagramImages = () => {
     axios.get(url).then(response => {
       const filteredList = response.data.data.filter(function(image) {
-        return image.media_type !== 'VIDEO';
+        return image.media_type !== "VIDEO";
       });
 
       this.setState({
@@ -119,6 +118,13 @@ class InstagramFeedContainer extends React.Component {
     this.setState({ currentPage: newPage });
   };
 
+  isImageInVisibleRange = index => {
+    return (
+      index >= this.state.imgsPerPage * this.state.currentPage &&
+      index < this.state.imgsPerPage * (this.state.currentPage + 1)
+    );
+  };
+
   render() {
     return (
       <div className="row h-100">
@@ -134,48 +140,55 @@ class InstagramFeedContainer extends React.Component {
         </div>
 
         <div className="row col-8 col-sm-10">
-          {this.state.imageList
-            .slice(
-              this.state.imgsPerPage * this.state.currentPage,
-              this.state.imgsPerPage * (this.state.currentPage + 1)
-            )
-            .map(image => {
-              return (
-                <div
-                  key={image.id}
-                  className="col-12 col-sm-12 col-md-6 col-lg-4"
+          {this.state.imageList.map((image, index) => {
+            return (
+              <div
+                key={image.id}
+                className="col-12 col-sm-12 col-md-6 col-lg-4"
+                style={
+                  this.isImageInVisibleRange(index)
+                    ? { display: "block" }
+                    : { display: "none" }
+                }
+              >
+                <Card
+                  style={{
+                    borderRadius: "20px",
+                    height: "450px",
+                    backgroundColor: "var(--color-primary-4)",
+                    textOverflow: "ellipsis",
+                    overflow: "hidden"
+                  }}
                 >
-                  <Card
-                    style={{
-                      height: '450px',
-                      backgroundColor: 'var(--color-primary-4)',
-                      textOverflow: 'ellipsis',
-                      overflow: 'hidden'
-                    }}
-                  >
-                    <a href={image.permalink}>
-                      <Card.Img
-                        variant="top"
-                        src={image.media_url}
-                        alt={image.caption}
-                        style={{
-                          height: '300px',
-                          padding: '4px',
-                          objectFit: 'cover'
-                        }}
-                      />
-                    </a>
-                    <Card.Body>
-                      <LinesEllipsis
-                        text={image.caption.replace('\n', '')}
-                        maxLine="5"
-                        trimRight
-                      />
-                    </Card.Body>
-                  </Card>
-                </div>
-              );
-            })}
+                  <a href={image.permalink}>
+                    <Card.Img
+                      variant="top"
+                      src={image.media_url}
+                      alt={image.caption}
+                      style={{
+                        borderRadius: "20px",
+                        height: "300px",
+                        padding: "4px",
+                        objectFit: "cover"
+                      }}
+                    />
+                  </a>
+                  <Card.Body>
+                    <p
+                      style={{
+                        overflow: "hidden",
+                        display: "-webkit-box",
+                        WebkitLineClamp: 4,
+                        WebkitBoxOrient: "vertical"
+                      }}
+                    >
+                      {image.caption.replace("\n", "")}
+                    </p>
+                  </Card.Body>
+                </Card>
+              </div>
+            );
+          })}
         </div>
 
         <div className="col-2 col-sm-1 align-self-center">
